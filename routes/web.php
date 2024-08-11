@@ -11,7 +11,7 @@ Route::prefix('api')->group(function () {
     Route::prefix('google')->group(function(){
 
         Route::get('/oauth', [App\Http\Controllers\GoogleOAuthController::class, 'auth']);
-        Route::get('/oauth/callback', [App\Http\Controllers\GoogleOAuthController::class, 'callback']);
+        Route::get('/oauth/callback', [App\Http\Controllers\GoogleOAuthController::class, 'register']);
 
     });
 

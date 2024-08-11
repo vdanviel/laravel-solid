@@ -35,7 +35,7 @@ final class GoogleOAuth {//final - https://www.php.net/manual/pt_BR/language.oop
     }
 
     //https://github.com/googleapis/google-api-php-client/blob/main/docs/oauth-web.md#step-4-handle-the-oauth-20-server-response
-    public function getUserData(Request $request) : Response
+    public function getUserData(Request $request) : array
     {
 
         $code = $request->query->get('code');
@@ -54,22 +54,16 @@ final class GoogleOAuth {//final - https://www.php.net/manual/pt_BR/language.oop
 
             $guser = $service->userinfo->get();
 
-            return response()->json([
-                'status' => true,
+            return [
                 'name' => $guser->getFamilyName(),
                 'email' => $guser->getEmail()
-            ], Response::HTTP_OK, [
-                'Content-Type: applicaiton/json'
-            ]);
+            ];
 
         }else{
 
-            return response()->json([
-                'status' => false,
-                'message' => 'It was not possible to retrieve Google information.'
-            ], Response::HTTP_BAD_REQUEST, [
-                'Content-Type: applicaiton/json'
-            ]);
+            return [
+                'error' => 'It was not possible to retrieve Google information.'
+            ];
 
         }
 
