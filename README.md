@@ -8,10 +8,10 @@ The API was write with _SOLID_ principles and has _PostgreSQL_ as its database.
 # Running project
 You can run the project in two ways:
 
-1. Docker
+1. **Docker:**
 
 
-2. Laravel Artisan
+2. **Laravel Artisan:** 
 The only thing that you gonna have to do is to add your `.env` with the credencials of the database you want to use for example:
 ![exemple-env](https://parzibyte.me/blog/wp-content/uploads/2019/03/Env-de-Laravel-para-MySQL.png)
 

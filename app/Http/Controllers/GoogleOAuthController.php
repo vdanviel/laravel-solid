@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use \Google\Client as GoogleCLient;
 use App\Services\GoogleOAuth;
 use App\Models\User;
@@ -11,7 +11,7 @@ use App\Models\User;
 class GoogleOAuthController extends Controller
 {
     
-    public function auth() : \Illuminate\Http\RedirectResponse
+    public function checkout() : \Illuminate\Http\RedirectResponse
     {
 
         $google = new GoogleClient;
@@ -20,7 +20,7 @@ class GoogleOAuthController extends Controller
 
     }
 
-    public function register(Request $request): Response
+    public function auth(Request $request): JsonResponse
     {
 
         $google = new GoogleClient; 
@@ -29,7 +29,7 @@ class GoogleOAuthController extends Controller
 
         if(isset($googleUserData['error'])){
             
-            return Response::json(['error'=>$googleUserData['error']], Response::HTTP_BAD_REQUEST);
+            return new JsonResponse(['error'=>$googleUserData['error']], 400);
 
         }else{
 
@@ -39,25 +39,25 @@ class GoogleOAuthController extends Controller
                 ['name' => $googleUserData['name']]//others registering camps, if not find..
             );  
 
-            if ($user->exists) {
+            if ($user->exists()) {
                 
-                return Response::json([
+                return new JsonResponse([
                     'id' => $user->id,
                     'name' => $user->name,
                     'email' => $user->email,
                     'created_at' => $user->created_at,
-                ], Response::HTTP_OK);
+                ], 200);
 
             }else{
 
                 $user->save();
 
-                return Response::json([
+                return new JsonResponse([
                     'registered' => $user->created_at,
                     'id' => $user->id,
                     'name' => $user->name,
                     'email' => $user->email
-                ], Response::HTTP_OK);
+                ], 200);
 
             }
 
