@@ -33,33 +33,17 @@ class GoogleOAuthController extends Controller
 
         }else{
 
-
             $user = User::firstOrNew(
                 ['email' => $googleUserData['email']],//looking for..
                 ['name' => $googleUserData['name']]//others registering camps, if not find..
             );  
-
-            if ($user->exists()) {
                 
-                return new JsonResponse([
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'created_at' => $user->created_at,
-                ], 200);
-
-            }else{
-
-                $user->save();
-
-                return new JsonResponse([
-                    'registered' => $user->created_at,
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'email' => $user->email
-                ], 200);
-
-            }
+            return new JsonResponse([
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'created_at' => $user->created_at,
+            ], 200);
 
         }
         
