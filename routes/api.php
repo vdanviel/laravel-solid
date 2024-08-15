@@ -22,3 +22,9 @@ Route::prefix('/user')->group(function(){
     Route::post('/register', [Controllers\UserController::class, 'store']);
 
 });
+
+Route::prefix('/auth')->group(function(){
+
+    Route::post('/', [Controllers\AuthController::class, 'login']);
+
+});

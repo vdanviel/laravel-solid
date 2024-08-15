@@ -8,14 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 //https://laravel.com/docs/11.x/validation#form-request-validation
 
 class RegisterUserRequest extends FormRequest
-{
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return true;
-    }
+{   
 
     /**
      * Get the validation rules that apply to the request.
@@ -31,4 +24,6 @@ class RegisterUserRequest extends FormRequest
             'password' => 'required|string|min:8'
         ];
     }
+
+
 }

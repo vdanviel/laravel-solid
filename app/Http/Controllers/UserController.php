@@ -2,25 +2,63 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegisterUserRequest;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Resources\UserResource;
+use Illuminate\Http\JsonResponse;
+use \Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Throwable;
+
+use App\Services\UserService;
+use App\Services\UserValidationService;
 
 class UserController extends Controller
 {
-    public function store(RegisterUserRequest $request)
+    protected $userService;
+    protected $uservalidationService;
+
+    public function __construct(UserService $userService, UserValidationService $uservalidationService)
     {
+        $this->userService = $userService;
+        $this->uservalidationService = $uservalidationService;
+    }
 
-        //dd($request->validated());
-        
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
-            'password' => \Illuminate\Support\Facades\Hash::make($request->name)//https://laravel.com/docs/11.x/hashing#hashing-passwords,
-        ]);
+    public function store(Request $request): JsonResponse
+    {
+        $validation = $this->uservalidationService->validateUserData($request->all());
 
-        return new UserResource($user);
+        if ($validation->fails()) {
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => 'Validation error.',
+                    'errors' => $validation->errors()
+                ],
+                401
+            );
+        }
+
+        try {
+            
+            $user = $this->userService->createUser($request->all());
+
+            return response()->json(
+                [
+                    'status' => true,
+                    'message' => 'User created!',
+                    'id' => $user->id
+                ],
+                200
+            );
+        } catch (Throwable $th) {
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage()
+                ],
+                400
+            );
+        }
     }
 }
