@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Http\JsonResponse;
-use App\Services\AuthValidationService;
+use App\Services\ValidationService;
 use App\Services\AuthService;
 
 class AuthController extends Controller
@@ -13,7 +13,14 @@ class AuthController extends Controller
     public function login(Request $request): JsonResponse
     {
 
-        AuthValidationService::authDataValidation($request->all());
+        $valid = ValidationService::dataValidation($request->all(), 
+            [
+                'email' => 'required|email',
+                'password' => 'required'
+            ]
+        );
+
+        if($valid instanceof JsonResponse) return $valid;
     
         try {
 

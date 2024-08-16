@@ -21,6 +21,8 @@ Route::prefix('/user')->group(function(){
 
     Route::post('/register', [Controllers\UserController::class, 'store']);
 
+    Route::post('/mail/change/password', [Controllers\UserController::class, 'mailForgetPassword']);
+
 });
 
 Route::prefix('/auth')->group(function(){

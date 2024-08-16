@@ -11,37 +11,29 @@ use Illuminate\Support\Facades\Validator;
 use Throwable;
 
 use App\Services\UserService;
-use App\Services\UserValidationService;
+use App\Services\ValidationService;
 
 class UserController extends Controller
 {
-    protected $userService;
-    protected $uservalidationService;
-
-    public function __construct(UserService $userService, UserValidationService $uservalidationService)
-    {
-        $this->userService = $userService;
-        $this->uservalidationService = $uservalidationService;
-    }
 
     public function store(Request $request): JsonResponse
     {
-        $validation = $this->uservalidationService->validateUserData($request->all());
 
-        if ($validation->fails()) {
-            return response()->json(
-                [
-                    'status' => false,
-                    'message' => 'Validation error.',
-                    'errors' => $validation->errors()
-                ],
-                401
-            );
-        }
+        $valid = ValidationService::dataValidation(
+            $request->all(), 
+            [
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|unique:users,email',
+                'phone_number' => 'nullable|string|max:20',
+                'password' => 'required|string|min:8',
+            ]
+        );
 
+        if($valid instanceof JsonResponse) return $valid;
+        
         try {
             
-            $user = $this->userService->createUser($request->all());
+            $user = UserService::createUser($request->all());
 
             return response()->json(
                 [
@@ -51,7 +43,9 @@ class UserController extends Controller
                 ],
                 200
             );
+
         } catch (Throwable $th) {
+
             return response()->json(
                 [
                     'status' => false,
@@ -59,6 +53,45 @@ class UserController extends Controller
                 ],
                 400
             );
+            
         }
+    }
+
+    public function mailForgetPassword(Request $request) : JsonResponse
+    {
+
+        $valid = ValidationService::dataValidation($request->all(), 
+            [
+                'email' => 'required|email|unique:users,email',
+            ]
+        );
+
+        if($valid instanceof JsonResponse) return $valid;
+
+        try {
+            
+            return UserService::handleForgotPassword($request);
+
+        } catch (Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage()
+                ],
+                400
+            );
+            
+        }
+
+    }
+
+    public function changePassword(Request $request) 
+    {
+
+
+
+
+
     }
 }
