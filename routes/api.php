@@ -23,6 +23,10 @@ Route::prefix('/user')->group(function(){
 
     Route::post('/mail/change/password', [Controllers\UserController::class, 'mailForgetPassword']);
 
+    Route::post('/change/password', [Controllers\UserController::class, 'changePassword']);
+
+    Route::get('/check/token', [Controllers\UserController::class, 'verifyToken']);
+
 });
 
 Route::prefix('/auth')->group(function(){

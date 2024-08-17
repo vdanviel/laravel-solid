@@ -113,66 +113,86 @@ class UserService
 
     }
     
-    public static function changePasswordUser(User $user, string $token, string $newPassword) : JsonResponse
+    public static function changePasswordUser(string $token, string $newPassword) : JsonResponse
     {
 
-        $token_obj = PersonalAccessToken::where('tokenable_id', $user->id)->where('token', $token)->orderBy('tokenable_id', 'desc')->first();
+        $tokenObj = PersonalAccessToken::findToken($token);
 
-        if (!$token_obj) {
-            
-            return new JsonResponse(
-                [
-                    'status' => false,
-                    'message' => "Token is invalid.",
-                ],
-                JsonResponse::HTTP_UNAUTHORIZED
-            );
+        $tokenCondition = (new UserService)->verifyTokenCondition($token);
 
-        }
+        if(isset($tokenCondition) && $tokenCondition['status'] == true){
 
-        $expired = (new UserService)->expiredRegisterToken($token_obj);
-
-        if ($expired) {
-            
-            return new JsonResponse(
-                [
-                    'status' => false,
-                    'message' => "Token is invalid.",
-                ],
-                JsonResponse::HTTP_UNAUTHORIZED
-            );
-
-        }else{
+            $user = User::find($tokenObj->tokenable_id);
 
             $user->password = Hash::make($newPassword);
-
+    
             $user->save();
+            
+            $tokenObj->delete();
 
             return new JsonResponse(
                 [
                     'status' => true,
-                    'message' => "You've changed your password successfully.",
+                    'message' => "You've changed your password successfully!",
                 ],
-                JsonResponse::HTTP_UNAUTHORIZED
+                JsonResponse::HTTP_OK
+            );
+            
+
+        }else{
+
+            return new JsonResponse(
+                [
+                    'status' => false,
+                    'message' => $tokenCondition['reason'] ,
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
             );
 
         }
 
     }
 
-    public function expiredRegisterToken(PersonalAccessToken $personal_token_obj){
+    public static function verifyTokenCondition(string $token): array
+    {   
 
-        $expiration_date = new DateTime($personal_token_obj->expires_at);
+        $tokenObj = PersonalAccessToken::findToken($token);
 
-        $now = new DateTime();
+        if (!$tokenObj) {
 
-        if ($now->getTimestamp() > $expiration_date->getTimestamp()) {
+            return [
+                    'status' => false,
+                    'reason' => "Token is invalid.",
+                ];
+
+        }
+
+        $user = User::find($tokenObj->tokenable_id);
+
+        if (!$user) {
             
-            return false;
+            return [
+                    'status' => false,
+                    'reason' => "User doesn't exists.",
+            ];
+
+        }
+
+        $expiration_date = new DateTime($tokenObj->expires_at);
+
+        if ((new DateTime())->getTimestamp() > $expiration_date->getTimestamp()) {
+            
+            return [
+                'status' => false,
+                'reason' => "Token is expired.",
+            ];
 
         }else{
 
-            return true;
+            return [
+                'status' => true,
+                'reason' => "Token is valid.",
+            ];
 
         }
 

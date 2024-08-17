@@ -38,8 +38,7 @@ class UserController extends Controller
             return response()->json(
                 [
                     'status' => true,
-                    'message' => 'User created!',
-                    'id' => $user->id
+                    'message' => 'User created!'
                 ],
                 200
             );
@@ -62,7 +61,7 @@ class UserController extends Controller
 
         $valid = ValidationService::dataValidation($request->all(), 
             [
-                'email' => 'required|email|unique:users,email',
+                'email' => 'required|email',
             ]
         );
 
@@ -86,12 +85,54 @@ class UserController extends Controller
 
     }
 
-    public function changePassword(Request $request) 
+    public function verifyToken(Request $request): JsonResponse
     {
 
+        $valid = ValidationService::dataValidation($request->query->all(), ['token' => 'required|string']);
 
+        if($valid instanceof JsonResponse) return $valid;
 
+        try {
+            
+            return response()->json(UserService::verifyTokenCondition($request->query->getString('token')), 200);
 
+        } catch (Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage()
+                ],
+                400
+            );
+            
+        }
 
     }
+
+    public function changePassword(Request $request) 
+    {
+        
+        $valid = ValidationService::dataValidation($request->all(), ['token' => 'required|string', 'new_password' => 'required|string']);
+
+        if($valid instanceof JsonResponse) return $valid;
+
+        try {
+            
+            return UserService::changePasswordUser($request->token, $request->new_password);
+
+        } catch (Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage()
+                ],
+                400
+            );
+            
+        }
+
+    }
+
 }

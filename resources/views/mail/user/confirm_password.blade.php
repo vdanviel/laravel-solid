@@ -16,21 +16,26 @@
                                     Hello {{$user->name}},
                                 </p>
                                 <p style="font-size: 16px; color: #555;">
-                                    Thank you for using our application! Please use the token below to confirm the password changing:
+                                    Thank you for using our application! Please use the button below to confirm the password change:
                                 </p>
                                 <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                     <tr>
                                         <td align="center" style="padding: 20px 0;">
-                                            <table cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f4f4; padding: 10px 20px; border-radius: 4px;">
-                                                <tr>
-                                                    <td align="center" style="color: #555; font-weight: bold;">
-                                                        {{$token}}
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                            <a href="http://127.0.0.1:8000/user/change/password?token={{$token}}" style="background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 16px; font-weight: bold;">
+                                                Confirm Password Change
+                                            </a>
                                         </td>
                                     </tr>
+                                    <tr>
+                                    <td align="center" style="padding: 20px 0;">
+                                        <p style="color: #555">Token de acesso:</p>
+                                        <p style="color:white; background: #777; padding:15px; border-radius:16px; width:fit-content;">
+                                            {{$token}}
+                                        </p>
+                                    </td>
+                                    </tr>
                                 </table>
+
                                 <p style="font-size: 16px; color: #555; padding: 20px 0 0 0;">
                                     If you did not request this token, please ignore this email.
                                 </p>

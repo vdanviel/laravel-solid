@@ -24,7 +24,7 @@ class AuthController extends Controller
     
         try {
 
-            return AuthService::authenticate($request->email, $request->password);
+            return AuthService::authenticate($request, $request->email, $request->password);
     
         } catch (\Throwable $e) {
 
