@@ -12,8 +12,12 @@ You can run the project in two ways:
 
 
 2. **Laravel Artisan:** 
-The only thing that you gonna have to do is to add your `.env` with the credencials of the database you want to use for example:
+- First thing that you gonna have to do is to add your `.env` with the credencials of the database you want to use for example:
 ![exemple-env](https://parzibyte.me/blog/wp-content/uploads/2019/03/Env-de-Laravel-para-MySQL.png)
+
+- Then run `php artisan migrate` to run all the necessary database structure for the project.
+
+- After that run `php artisan serve` and you're good to go.
 
 ### That's it, thanks for the support!
 ![michael-thanks](https://miro.medium.com/v2/resize:fit:960/0*kIrASm_jWM13i1tT.gif)
