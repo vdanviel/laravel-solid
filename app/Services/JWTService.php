@@ -6,6 +6,7 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 
 class JWTService {
 
@@ -13,8 +14,12 @@ class JWTService {
     private string $hash;
 
     public function __construct(){
-        $this->secret = env('SECRET_KEY_JWT');//https://laravel.com/docs/11.x/helpers#method-env;
-        $this->hash = env('HASH_TYPE_JWT');
+
+        //dd(config('jwt.secret'), config('jwt.hash'));
+
+        $this->secret = config('jwt.secret');//https://laravel.com/docs/11.x/helpers#method-config
+        $this->hash = config('jwt.hash');
+
     }
 
     public function generateJWT(Request $request) : string
@@ -25,7 +30,7 @@ class JWTService {
             'aud' => $request->url(),
             'iat' => (new \DateTime())->getTimestamp(),
             'nbf' => (new \DateTime())->getTimestamp(),
-            'exp' => now()->addMinute()->getTimestamp()
+            'exp' => now()->addMonth()->getTimestamp()
         ];
 
         $jwt = JWT::encode($result, $this->secret, $this->hash);
@@ -34,7 +39,7 @@ class JWTService {
 
     }
 
-    public function checkJWT(string $jwt) : JsonResponse | null
+    public function checkJWT(string $jwt) : JsonResponse | bool
     {
         try {
             
@@ -54,13 +59,13 @@ class JWTService {
                 return new JsonResponse(
                     [
                         'status' => false,
-                        'message' => 'Token is not yet valid.'
+                        'message' => 'Session is unauthorized.',
                     ],
-                    JsonResponse::HTTP_UNAUTHORIZED
+                    JsonResponse::HTTP_BAD_REQUEST
                 );
             }
     
-            return null;
+            return true;
     
         } catch (\Exception $e) {
 
@@ -74,5 +79,5 @@ class JWTService {
 
         }
     }
-    
+
 }

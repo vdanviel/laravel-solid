@@ -26,13 +26,16 @@ class AuthController extends Controller
 
             return AuthService::authenticate($request, $request->email, $request->password);
     
-        } catch (\Throwable $e) {
+        } catch (\Throwable $th) {
 
-            return response()->json([
-                'status' => false,
-                'message' => 'An error occurred during login.',
-                'error' => $e->getMessage(),
-            ], 500);        
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );     
 
         }
     }

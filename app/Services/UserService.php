@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Models\Address;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserChangePassword;
@@ -31,13 +32,6 @@ class UserService
         $user->phone_number = $data['phone_number'];
 
         return $user->save();
-
-    }
-
-    public static function registerAddressUser(User $user, array $data)
-    {
-
-
 
     }
     

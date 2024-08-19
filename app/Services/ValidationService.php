@@ -4,7 +4,6 @@ namespace App\Services;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Validator as Validation;
 
 class ValidationService {

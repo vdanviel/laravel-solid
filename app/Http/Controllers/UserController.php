@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\QueryException;
+#http
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Http\JsonResponse;
-use \Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Throwable;
 
+#services
 use App\Services\UserService;
 use App\Services\ValidationService;
 
@@ -32,8 +29,6 @@ class UserController extends Controller
         if($valid instanceof JsonResponse) return $valid;
         
         try {
-            
-            $user = UserService::createUser($request->all());
 
             return response()->json(
                 [
@@ -43,14 +38,15 @@ class UserController extends Controller
                 200
             );
 
-        } catch (Throwable $th) {
+        } catch (\Throwable $th) {
 
             return response()->json(
                 [
                     'status' => false,
-                    'message' => $th->getMessage()
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
                 ],
-                400
+                500
             );
             
         }
@@ -71,7 +67,7 @@ class UserController extends Controller
             
             return UserService::handleForgotPassword($request);
 
-        } catch (Throwable $th) {
+        } catch (\Throwable $th) {
 
             return response()->json(
                 [
@@ -96,14 +92,15 @@ class UserController extends Controller
             
             return response()->json(UserService::verifyTokenCondition($request->query->getString('token')), 200);
 
-        } catch (Throwable $th) {
+        } catch (\Throwable $th) {
 
             return response()->json(
                 [
                     'status' => false,
-                    'message' => $th->getMessage()
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
                 ],
-                400
+                500
             );
             
         }
@@ -121,14 +118,15 @@ class UserController extends Controller
             
             return UserService::changePasswordUser($request->token, $request->new_password);
 
-        } catch (Throwable $th) {
+        } catch (\Throwable $th) {
 
             return response()->json(
                 [
                     'status' => false,
-                    'message' => $th->getMessage()
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
                 ],
-                400
+                500
             );
             
         }

@@ -5,6 +5,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Middleware;
 
 Route::get('/', function(){
     return "Running..";
@@ -22,10 +23,14 @@ Route::prefix('/user')->group(function(){
     Route::post('/register', [Controllers\UserController::class, 'store']);
 
     Route::post('/mail/change/password', [Controllers\UserController::class, 'mailForgetPassword']);
-
+    Route::get('/check/token', [Controllers\UserController::class, 'verifyToken']);
     Route::post('/change/password', [Controllers\UserController::class, 'changePassword']);
 
-    Route::get('/check/token', [Controllers\UserController::class, 'verifyToken']);
+    Route::prefix('/address')->middleware(Middleware\EnsureTokenIsValid::class)->group(function (){
+
+        Route::post('/add', [Controllers\AddressController::class, 'register']);
+
+    });
 
 });
 
