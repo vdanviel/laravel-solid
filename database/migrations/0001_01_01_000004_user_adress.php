@@ -14,11 +14,16 @@ return new class extends Migration
         Schema::create('address', function (Blueprint $table) {
             $table->id();
             
-            $table->string('street');
-            $table->string('city');
-            $table->string('state');
-            $table->string('zip_code');
-            $table->string('country');
+            $table->string('street')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('country')->nullable();
+
+            $table->foreignId('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->boolean('active')->default(false);
 
             $table->timestamps();
         });

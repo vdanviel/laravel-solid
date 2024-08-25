@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\User;
-use App\Models\Address;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserChangePassword;
@@ -14,24 +13,69 @@ use DateTime;
 
 class UserService
 {
-    public static function createUser(array $data): User
-    {
-        return User::create([
+    public static function createUser(array $data): JsonResponse
+    {   
+
+        User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
         ]);
+
+        return response()->json(
+            [
+                'status' => true,
+                'message' => 'User created!'
+            ],
+            200
+        );
     }
 
-    public static function putUser(User $user, array $data): bool
+    public static function updateUser(int $user_id, array $data): JsonResponse
     {
+
+        $user = User::find($user_id);
+
+        if (!$user) {
+            
+            return new JsonResponse(
+                [
+                    'status' => false,
+                    'message' => "User doesn't exists."
+                ],
+                JsonResponse::HTTP_UNAUTHORIZED
+            );
+
+        }
 
         $user->name = $data['name'];
         $user->email = $data['email'];
         $user->phone_number = $data['phone_number'];
 
-        return $user->save();
+        $result =  $user->save();
+
+        if ($result == true) {
+            
+            return new JsonResponse(
+                [
+                    'status' => true,
+                    'message' => 'User has been updated.'
+                ],
+                JsonResponse::HTTP_OK
+            );
+
+        }else{
+
+            return new JsonResponse(
+                [
+                    'status' => false,
+                    'message' => 'User has not been updated.'
+                ],
+                JsonResponse::HTTP_BAD_REQUEST  
+            );
+
+        }
 
     }
     
@@ -75,6 +119,15 @@ class UserService
             );
 
         }
+
+    }
+
+    public static function findUser(int $idUser) : User
+    {
+
+        $user = User::find($idUser)->setHidden(['password', 'email_verified_at', 'remember_token']);
+
+        return $user;
 
     }
 
@@ -192,17 +245,46 @@ class UserService
 
     }
 
-     public static function patchUser(User $user, $data)
-     {
+    public static function removeUser(int $idUSer)
+    {
 
+        $user = User::find($idUSer);
 
+        if (!$user) {
 
-     }
+            return new JsonResponse(
+                [
+                    'status' => false,
+                    'message' => "User not found.",
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
+            );
 
-     public static function deleteUser(User $user, $id)
-     {
+        }
 
+        $deleted = $user->delete();
 
+        if ($deleted == true) {
+            
+            return new JsonResponse(
+                [
+                    'status' => true,
+                    'message' => "User deleted.",
+                ],
+                JsonResponse::HTTP_OK
+            );
 
-     }
+        }else{
+
+            return new JsonResponse(
+                [
+                    'status' => false,
+                    'message' => "Error on deleting user.",
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
+            );
+
+        }
+
+    }
 }

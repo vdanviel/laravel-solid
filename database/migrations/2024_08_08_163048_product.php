@@ -18,8 +18,8 @@ return new class extends Migration
             $tb->decimal('price',10,2)->nullable();
             $tb->string('company')->nullable();
 
-            $tb->foreignId('type')->nullable();
-            $tb->foreign('type')->references('id')->on('product_type');
+            $tb->foreignId('type_id')->nullable();
+            $tb->foreign('type_id')->references('id')->on('product_type');
 
             $tb->text('desc')->nullable();
             $tb->integer('stock')->nullable();

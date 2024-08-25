@@ -48,8 +48,7 @@ class JWTService {
             if ((new \DateTime())->getTimestamp() > $decoded->exp) {
                 return new JsonResponse(
                     [
-                        'status' => false,
-                        'message' => 'Your session has expired.'
+                        'jwt' => 'Your session has expired.'
                     ],
                     JsonResponse::HTTP_UNAUTHORIZED
                 );
@@ -58,8 +57,7 @@ class JWTService {
             if ((new \DateTime())->getTimestamp() < $decoded->nbf) {
                 return new JsonResponse(
                     [
-                        'status' => false,
-                        'message' => 'Session is unauthorized.',
+                        'jwt' => 'Session is unauthorized.',
                     ],
                     JsonResponse::HTTP_BAD_REQUEST
                 );
@@ -71,8 +69,7 @@ class JWTService {
 
             return new JsonResponse(
                 [
-                    'status' => false,
-                    'message' => 'Invalid token. ' . $e->getMessage()
+                    'jwt' => $e->getMessage()
                 ],
                 JsonResponse::HTTP_UNAUTHORIZED
             );

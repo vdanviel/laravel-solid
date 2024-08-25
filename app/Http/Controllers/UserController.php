@@ -30,13 +30,7 @@ class UserController extends Controller
         
         try {
 
-            return response()->json(
-                [
-                    'status' => true,
-                    'message' => 'User created!'
-                ],
-                200
-            );
+            return UserService::createUser($request->toArray());
 
         } catch (\Throwable $th) {
 
@@ -117,6 +111,84 @@ class UserController extends Controller
         try {
             
             return UserService::changePasswordUser($request->token, $request->new_password);
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
+    }
+
+    public function update(Request $request) 
+    {
+        
+        $valid = ValidationService::dataValidation($request->all(), ['id' => 'required|integer', 'name' => 'required|string', 'email' => 'required|string', 'phone_number' => 'required|string']);
+
+        if($valid instanceof JsonResponse) return $valid;
+
+        try {
+
+            return UserService::updateUser($request->id, $request->toArray());
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
+    }
+
+    public function find(Request $request) : \App\Models\User
+    {
+
+        $valid = ValidationService::dataValidation($request->query->all(), ['id_user' => 'required|integer']);
+
+        if($valid instanceof JsonResponse) return $valid;
+
+        try{
+
+            return UserService::findUser($request->query->getInt('id_user'));
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
+    }
+
+    public function removeAddress(Request $request)
+    {
+
+        try {
+            
+            $valid = ValidationService::dataValidation($request->all(), ['id_user' => 'required|integer']);
+
+            if($valid instanceof JsonResponse) return $valid;
+    
+            return UserService::removeUser($request->id_user);
 
         } catch (\Throwable $th) {
 
