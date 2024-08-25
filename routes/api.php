@@ -29,8 +29,7 @@ Route::prefix('/user')->group(function(){
 
     Route::put('/update', [UserController::class, 'update']);
     Route::get('/find', [UserController::class, 'find']);
-    Route::delete('/delete', [UserController::class, 'removeAddress']);
-
+    Route::delete('/delete', [UserController::class, 'removeUser']);
 
     Route::prefix('/address')->middleware(Middleware\EnsureTokenIsValid::class)->group(function (){
 

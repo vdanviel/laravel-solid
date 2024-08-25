@@ -179,7 +179,7 @@ class UserController extends Controller
 
     }
 
-    public function removeAddress(Request $request)
+    public function removeUser(Request $request)
     {
 
         try {
