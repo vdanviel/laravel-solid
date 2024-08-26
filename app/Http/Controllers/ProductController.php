@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\ProductService;
 use Illuminate\Http\Request;
+
+#requests
+use App\Http\Requests\Product\RegisterProductRequest;
+use App\Http\Requests\Product\UpdateProductRequest;
 
 class ProductController
 {
@@ -25,9 +30,26 @@ class ProductController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(RegisterProductRequest $request)
     {
-        //
+
+        try {
+            
+            return ProductService::register($request->toArray());
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
     /**
@@ -49,9 +71,24 @@ class ProductController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProductRequest $request)
     {
-        //
+        try {
+            
+            return ProductService::update($request->id, $request->toArray());
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
     }
 
     /**

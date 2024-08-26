@@ -15,7 +15,7 @@ return new class extends Migration
 
             $tb->id();
             $tb->string('name')->nullable()->unique();
-            $tb->string('description')->nullable();
+            $tb->text('description')->nullable();
             $tb->timestamps();
 
         });

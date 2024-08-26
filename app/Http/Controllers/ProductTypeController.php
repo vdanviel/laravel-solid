@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Product\Type\ProductTypeRegisterRequest;
+use App\Http\Requests\Product\Type\ProductTypeUpdateRequest;
+use App\Services\ProductTypeService;
 
 class ProductTypeController
 {
@@ -11,54 +14,65 @@ class ProductTypeController
      */
     public function index()
     {
-        //
+        
+        try {
+            
+            return ProductTypeService::index();
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function store(ProductTypeRegisterRequest $request)
     {
-        //
+        
+        try {
+            
+            return ProductTypeService::register($request->toArray());
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function update(ProductTypeUpdateRequest $request)
     {
-        //
-    }
+        try {
+            
+            return ProductTypeService::update($request->id_type, $request->toArray());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        } catch (\Throwable $th) {
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
     }
 }

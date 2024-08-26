@@ -26,7 +26,7 @@ class EnsureTokenIsValid
         } else {
             return new JsonResponse([
                 'jwt' => false,
-                'message' => 'Authorization token is required.'
+                'jwt_error' => 'Authorization token is required.'
             ], JsonResponse::HTTP_UNAUTHORIZED);
         }
     }

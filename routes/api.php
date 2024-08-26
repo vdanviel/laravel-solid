@@ -40,13 +40,26 @@ Route::prefix('/user')->group(function(){
         Route::get('/index', [Controllers\AddressController::class, 'indexAddress']);
         Route::delete('/remove', [Controllers\AddressController::class, 'removeAddress']);
 
-
     });
 
 });
 
-Route::prefix('/auth')->group(function(){
 
-    Route::post('/', [Controllers\AuthController::class, 'login']);
+Route::post('/auth', [Controllers\AuthController::class, 'login']);
+
+
+Route::prefix('/product')->group(function(){
+
+    Route::post('/register', [Controllers\ProductController::class, 'store']);
+    Route::put('/update', [Controllers\ProductController::class, 'update']);
+
+    Route::prefix('/type')->middleware(App\Http\Middleware\EnsureTokenIsValid::class)->group(function(){
+
+        Route::post('/register', [Controllers\ProductTypeController::class, 'store']);
+        Route::put('/update', [Controllers\ProductTypeController::class, 'update']);
+        Route::get('/index', [Controllers\ProductTypeController::class, 'index']);
+
+    });
+
 
 });

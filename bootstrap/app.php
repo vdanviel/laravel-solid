@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Validation\ValidationException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -18,10 +19,19 @@ return Application::configure(basePath: dirname(__DIR__))
         
         $exceptions->render(function (\Throwable $th){
 
+            if ($th instanceof ValidationException) {
+                return response()->json([
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'missing' => $th->errors()
+                ], 422);
+            }
+    
+            // Para outras exceções que não são de validação, você pode personalizar a resposta
             return response()->json([
                 'status' => false,
-                'error' => $th->getMessage()
-            ], 405);
+                'message' => $th->getMessage(),
+            ], 500);
 
         });
 

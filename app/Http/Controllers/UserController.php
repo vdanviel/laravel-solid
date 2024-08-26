@@ -3,30 +3,25 @@
 namespace App\Http\Controllers;
 
 #http
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 #services
 use App\Services\UserService;
-use App\Services\ValidationService;
+
+#requests
+use App\Http\Requests\User\RegisterUserRequest;
+use App\Http\Requests\User\MailForgetPasswordUSerRequest;
+use App\Http\Requests\User\VerifyTokenUserRequest;
+use App\Http\Requests\User\ChangePasswordUserRequest;
+use App\Http\Requests\User\UpdateUserRequest;
+use App\Http\Requests\User\FindUserRequest;
+use App\Http\Requests\User\RemoveUserRequest;
 
 class UserController extends Controller
 {
 
-    public function store(Request $request): JsonResponse
+    public function store(RegisterUserRequest $request): JsonResponse
     {
-
-        $valid = ValidationService::dataValidation(
-            $request->all(), 
-            [
-                'name' => 'required|string|max:255',
-                'email' => 'required|email|unique:users,email',
-                'phone_number' => 'nullable|string|max:20',
-                'password' => 'required|string|min:8',
-            ]
-        );
-
-        if($valid instanceof JsonResponse) return $valid;
         
         try {
 
@@ -46,16 +41,8 @@ class UserController extends Controller
         }
     }
 
-    public function mailForgetPassword(Request $request) : JsonResponse
+    public function mailForgetPassword(MailForgetPasswordUSerRequest $request) : JsonResponse
     {
-
-        $valid = ValidationService::dataValidation($request->all(), 
-            [
-                'email' => 'required|email',
-            ]
-        );
-
-        if($valid instanceof JsonResponse) return $valid;
 
         try {
             
@@ -75,12 +62,8 @@ class UserController extends Controller
 
     }
 
-    public function verifyToken(Request $request): JsonResponse
+    public function verifyToken(VerifyTokenUserRequest $request): JsonResponse
     {
-
-        $valid = ValidationService::dataValidation($request->query->all(), ['token' => 'required|string']);
-
-        if($valid instanceof JsonResponse) return $valid;
 
         try {
             
@@ -101,12 +84,8 @@ class UserController extends Controller
 
     }
 
-    public function changePassword(Request $request) 
+    public function changePassword(ChangePasswordUserRequest $request) 
     {
-        
-        $valid = ValidationService::dataValidation($request->all(), ['token' => 'required|string', 'new_password' => 'required|string']);
-
-        if($valid instanceof JsonResponse) return $valid;
 
         try {
             
@@ -127,12 +106,8 @@ class UserController extends Controller
 
     }
 
-    public function update(Request $request) 
+    public function update(UpdateUserRequest $request) 
     {
-        
-        $valid = ValidationService::dataValidation($request->all(), ['id' => 'required|integer', 'name' => 'required|string', 'email' => 'required|string', 'phone_number' => 'required|string']);
-
-        if($valid instanceof JsonResponse) return $valid;
 
         try {
 
@@ -153,12 +128,8 @@ class UserController extends Controller
 
     }
 
-    public function find(Request $request) : \App\Models\User
+    public function find(FindUserRequest $request) : \App\Models\User
     {
-
-        $valid = ValidationService::dataValidation($request->query->all(), ['id_user' => 'required|integer']);
-
-        if($valid instanceof JsonResponse) return $valid;
 
         try{
 
@@ -179,14 +150,10 @@ class UserController extends Controller
 
     }
 
-    public function removeUser(Request $request)
+    public function removeUser(RemoveUserRequest $request)
     {
 
         try {
-            
-            $valid = ValidationService::dataValidation($request->all(), ['id_user' => 'required|integer']);
-
-            if($valid instanceof JsonResponse) return $valid;
     
             return UserService::removeUser($request->id_user);
 

@@ -2,21 +2,29 @@
 
 namespace App\Http\Controllers;
 
+#model
+use App\Models\Address;
+
+#http
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+
+#services
 use App\Services\AddressService;
-use App\Services\ValidationService;
+
+#request
+use App\Http\Requests\Address\RegisterAddressRequest;
+use App\Http\Requests\Address\SwitchAddressRequest;
+use App\Http\Requests\Address\UpdateAddressRequest;
+use App\Http\Requests\Address\IndexUserAddressRequest;
+use App\Http\Requests\Address\FindAddressRequest;
+use App\Http\Requests\Address\RemoveAddressRequest;
 
 class AddressController extends Controller
 {
 
-    public function register(Request $request)
+    public function register(RegisterAddressRequest $request) : JsonResponse
     {
         try {
-            
-            $valid = ValidationService::dataValidation($request->all(), ['id_user' => 'required|integer', 'street' => 'required|string', 'city' => 'required|string', 'state' => 'required|string', 'zip_code' => 'required|string', 'country' => 'required|string']);
-
-            if($valid instanceof JsonResponse) return $valid;
     
             return AddressService::registerAddress($request->id_user, $request->toArray());
 
@@ -36,14 +44,10 @@ class AddressController extends Controller
 
     }
 
-    public function changeAddress(Request $request)
+    public function changeAddress(SwitchAddressRequest $request) : JsonResponse
     {
 
         try {
-            
-            $valid = ValidationService::dataValidation($request->all(), ['id_user' => 'required|integer','id_address' => 'required|integer']);
-
-            if($valid instanceof JsonResponse) return $valid;
     
             return AddressService::switchUserAddress($request->id_user, $request->id_address);
 
@@ -62,14 +66,10 @@ class AddressController extends Controller
 
     }
 
-    public function updateAddress(Request $request)
+    public function updateAddress(UpdateAddressRequest $request) : JsonResponse
     {
 
         try {
-            
-            $valid = ValidationService::dataValidation($request->all(), ['id_address' => 'required|integer', 'street' => 'string', 'city' => 'string', 'state' => 'string', 'zip_code' => 'string', 'country' => 'string']);
-
-            if($valid instanceof JsonResponse) return $valid;
     
             return AddressService::updateAddress($request->id_address, $request->toArray());
 
@@ -88,14 +88,10 @@ class AddressController extends Controller
 
     }
 
-    public function indexAddress(Request $request)
+    public function indexAddress(IndexUserAddressRequest $request) : \Illuminate\Database\Eloquent\Collection
     {
 
         try {
-            
-            $valid = ValidationService::dataValidation($request->query->all(), ['id_user' => 'required|integer']);
-
-            if($valid instanceof JsonResponse) return $valid;
     
             return AddressService::indexUserAddress($request->query->getInt('id_user'));
 
@@ -114,14 +110,10 @@ class AddressController extends Controller
 
     }
 
-    public function findAddress(Request $request)
+    public function findAddress(FindAddressRequest $request) : Address
     {
 
         try {
-            
-            $valid = ValidationService::dataValidation($request->query->all(), ['id_address' => 'required|integer']);
-
-            if($valid instanceof JsonResponse) return $valid;
     
             return AddressService::findAddress(intval($request->query->getString('id_address')));
 
@@ -140,14 +132,10 @@ class AddressController extends Controller
 
     }
 
-    public function removeAddress(Request $request)
+    public function removeAddress(RemoveAddressRequest $request) : JsonResponse
     {
 
         try {
-            
-            $valid = ValidationService::dataValidation($request->all(), ['id_address' => 'required|integer']);
-
-            if($valid instanceof JsonResponse) return $valid;
     
             return AddressService::deleteAddress($request->id_address);
 
