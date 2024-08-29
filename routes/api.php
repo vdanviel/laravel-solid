@@ -8,9 +8,8 @@ use App\Http\Controllers;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware;
 
-Route::get('/', function(){
-    return "Running..";
-});
+
+Route::post('/auth', [Controllers\AuthController::class, 'login']);
 
 Route::prefix('/google')->group(function(){
 
@@ -44,14 +43,7 @@ Route::prefix('/user')->group(function(){
 
 });
 
-
-Route::post('/auth', [Controllers\AuthController::class, 'login']);
-
-
-Route::prefix('/product')->group(function(){
-
-    Route::post('/register', [Controllers\ProductController::class, 'store']);
-    Route::put('/update', [Controllers\ProductController::class, 'update']);
+Route::prefix('/product')->middleware(App\Http\Middleware\EnsureTokenIsValid::class)->group(function(){
 
     Route::prefix('/type')->middleware(App\Http\Middleware\EnsureTokenIsValid::class)->group(function(){
 
@@ -61,5 +53,15 @@ Route::prefix('/product')->group(function(){
 
     });
 
+    Route::get('/index', [Controllers\ProductController::class, 'index']);
+    Route::get('/find', [Controllers\ProductController::class, 'show']);
+    Route::post('/register', [Controllers\ProductController::class, 'store']);
+    Route::put('/update', [Controllers\ProductController::class, 'update']);
+
+});
+
+Route::prefix('/card')->middleware(App\Http\Middleware\EnsureTokenIsValid::class)->group(function(){
+
+    Route::post('/register', [Controllers\ProductController::class, 'store']);
 
 });

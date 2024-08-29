@@ -5,6 +5,7 @@ namespace App\Services;
 #models
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 
 class ProductService
 {
@@ -44,6 +45,20 @@ class ProductService
             );
 
         }
+
+    }
+
+    public static function index() : JsonResponse
+    {
+
+        return response()->json(Product::all(),200);
+
+    }
+
+    public static function find(int $id) : JsonResponse
+    {
+
+        return response()->json(Product::find($id),200);
 
     }
 

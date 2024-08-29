@@ -8,28 +8,32 @@ use Illuminate\Http\Request;
 #requests
 use App\Http\Requests\Product\RegisterProductRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
+use App\Http\Requests\Product\FindProductRequest;
 
 class ProductController
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        try {
+            
+            return ProductService::index();
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(RegisterProductRequest $request)
     {
 
@@ -52,25 +56,28 @@ class ProductController
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(FindProductRequest $request)
     {
-        //
+        
+        try {
+            
+            return ProductService::find($request->query->getInt('id'));
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateProductRequest $request)
     {
         try {
@@ -89,13 +96,5 @@ class ProductController
             );
             
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
