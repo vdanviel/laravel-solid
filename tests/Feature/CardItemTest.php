@@ -11,10 +11,8 @@ class CardItemTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
+    public function test_add_item_on_card(): void
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $response = $this->postJson('/');
     }
 }

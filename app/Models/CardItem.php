@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class CardItem extends Model
 {
     use HasFactory;
+
+    protected $table = 'card_item';
 }

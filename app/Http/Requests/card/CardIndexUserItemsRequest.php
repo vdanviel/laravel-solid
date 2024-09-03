@@ -14,6 +14,12 @@ class CardIndexUserItemsRequest extends FormRequest
         return true;
     }
 
+    //sobrescrevendo a função validationData() da classe do FormRequest neste Request para ele analisar a query get da url..
+    public function validationData(): array
+    {
+        return $this->query();
+    }
+    
     /**
      * Get the validation rules that apply to the request.
      *

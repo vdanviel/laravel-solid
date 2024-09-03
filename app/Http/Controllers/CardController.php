@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 #services
-use CardService;
+use App\Services\CardService;
 
 #requests
 use App\Http\Requests\Card\CardRegisterRequest;

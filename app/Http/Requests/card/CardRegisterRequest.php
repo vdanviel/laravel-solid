@@ -23,7 +23,7 @@ class CardRegisterRequest extends FormRequest
     {
         return [
             'id_user' => 'integer|required',
-            'amount' => 'decimal:2'
+            'amount' => 'decimal:2,2'
         ];
     }
 }

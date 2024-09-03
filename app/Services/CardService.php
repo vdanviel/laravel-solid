@@ -1,6 +1,7 @@
 <?php
 
-use App\Services;
+namespace App\Services;
+
 use Illuminate\Http\JsonResponse;
 use App\Models\Card;
 use App\Models\CardItem;
@@ -13,7 +14,7 @@ class CardService {
 
         $card = new Card;
 
-        $card->id_user = $data['id_user'];
+        $card->user_id = $data['id_user'];
         $card->amount = $data['amount'];
 
         $result = $card->save();
@@ -74,7 +75,7 @@ class CardService {
     public static function all_user_items(int $idUser) : JsonResponse
     { 
 
-        $cardId = Card::where('user_id', $idUser)->limit(1)->first();
+        $cardId = Card::where('user_id', $idUser)->limit(1)->first()->id;
 
         $items = CardItem::where('card_id', $cardId)->get();
 

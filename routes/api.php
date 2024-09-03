@@ -62,6 +62,8 @@ Route::prefix('/product')->middleware(App\Http\Middleware\EnsureTokenIsValid::cl
 
 Route::prefix('/card')->middleware(App\Http\Middleware\EnsureTokenIsValid::class)->group(function(){
 
-    Route::post('/register', [Controllers\ProductController::class, 'store']);
+    Route::post('/register', [Controllers\CardController::class, 'create']);
+    Route::delete('/delete', [Controllers\CardController::class, 'destroy']);
+    Route::get('/user', [Controllers\CardController::class, 'indexUserItems']);
 
 });

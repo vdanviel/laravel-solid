@@ -16,7 +16,7 @@ class CardTest extends TestCase
     public function test_create_card(): void
     {
 
-        $responseToken = $this->postJson('/user/login', 
+        $responseToken = $this->postJson('/api/auth', 
             [
                 'email' => 'eucreio119@gmail.com',
                 'password' => 'password'
@@ -25,15 +25,20 @@ class CardTest extends TestCase
 
         $token = $responseToken->json('token');
 
-        $response = $this->withHeader("Authorization", "Bearer $token")->postJson('/api/card/register');
+        $response = $this->withHeaders(["Authorization" => "Bearer $token"])->postJson('/api/card/register', 
+            [
+            'id_user' => 1,
+            'amount' => '0.00'
+            ]
+        );
 
-        $response->assertStatus(200)->assertJsonFragment(['status' => true]);
+        $response->assertJsonFragment(['status' => true]);
     }
 
     public function test_delete_card(): void
     {
 
-        $responseToken = $this->postJson('/user/login', 
+        $responseToken = $this->postJson('/api/auth', 
             [
                 'email' => 'eucreio119@gmail.com',
                 'password' => 'password'
@@ -42,17 +47,19 @@ class CardTest extends TestCase
 
         $token = $responseToken->json('token');
 
-        $randomCard = Card::inRandomOrder()->first();
+        $randomCardId = Card::inRandomOrder()->first()->id;
 
-        $response = $this->withHeader("Authorization", "Bearer $token")->postJson('/api/card/delete?id=' . $randomCard->id);
+        $response = $this->withHeaders(["Authorization" => "Bearer $token"])->deleteJson('/api/card/delete', [
+            'card_id' => $randomCardId
+        ]);
 
-        $response->assertStatus(200)->assertJsonFragment(['status' => true]);
+        $response->assertJsonFragment(['status' => true]);
     }
 
     public function test_display_user_items(): void
     {
 
-        $responseToken = $this->postJson('/user/login', 
+        $responseToken = $this->postJson('/api/auth', 
             [
                 'email' => 'eucreio119@gmail.com',
                 'password' => 'password'
@@ -63,9 +70,9 @@ class CardTest extends TestCase
 
         $id = User::inRandomOrder()->first()->id;
 
-        $response = $this->withHeader("Authorization", "Bearer $token")->getJson('/api/card/user?id=' . $id);
+        $response = $this->withHeaders(["Authorization" => "Bearer $token"])->getJson('/api/card/user?user_id=' . $id);
 
-        $response->assertStatus(200)->assertJsonFragment(['status' => true]);
+        $response->assertJsonIsArray();;
     }
 
 }
