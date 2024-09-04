@@ -5,12 +5,27 @@ namespace App\Services;
 use Illuminate\Http\JsonResponse;
 use App\Models\Card;
 use App\Models\CardItem;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Casts\Json;
 
 class CardService {
 
     public static function register(array $data) : JsonResponse
     { 
+
+        $user = User::find($data['id_user']);
+
+        if (!$user) {
+
+            return new JsonResponse(
+                [
+                    'status' => false,
+                    'message' => "User not found.",
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
+            );
+
+        }
 
         $card = new Card;
 

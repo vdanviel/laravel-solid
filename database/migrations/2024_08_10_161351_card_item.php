@@ -22,6 +22,7 @@ return new class extends Migration
             $tb->foreign('card_id')->references('id')->on('card');
 
             $tb->decimal('amount', 10,2)->nullable();
+            $tb->integer('quantity')->default(1)->nullable();
 
             $tb->timestamps();
 

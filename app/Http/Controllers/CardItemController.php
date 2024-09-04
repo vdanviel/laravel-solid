@@ -4,61 +4,80 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Card;
+use App\Services\CardItemService;
+
+#requests
+use App\Http\Requests\Card\Item\CardItemCreateRequest;
+use App\Http\Requests\Card\Item\CardItemRemoveRequest;
+use App\Http\Requests\Card\Item\CardItemUpdateQuantityRequest;
+
+
 class CardItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function create(CardItemCreateRequest $request)
     {
-        //
+        try {
+            
+            return CardItemService::register($request->toArray());
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function remove(CardItemRemoveRequest $request)
     {
-        //
+        
+        try {
+            
+            return CardItemService::delete($request->item_card_id);
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function alterItemQuantity(CardItemUpdateQuantityRequest $request)
     {
-        //
+
+        try {
+            
+            return CardItemService::update_quantity($request->item_card_id, $request->qnt);
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

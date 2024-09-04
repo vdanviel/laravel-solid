@@ -67,3 +67,11 @@ Route::prefix('/card')->middleware(App\Http\Middleware\EnsureTokenIsValid::class
     Route::get('/user', [Controllers\CardController::class, 'indexUserItems']);
 
 });
+
+Route::prefix('/item')->middleware(App\Http\Middleware\EnsureTokenIsValid::class)->group(function(){
+
+    Route::post('/add', [Controllers\CardItemController::class, 'create']);
+    Route::delete('/remove', [Controllers\CardItemController::class, 'remove']);
+    Route::patch('/alter/qnt', [Controllers\CardItemController::class, 'alterItemQuantity']);
+
+});

@@ -72,7 +72,7 @@ class CardTest extends TestCase
 
         $response = $this->withHeaders(["Authorization" => "Bearer $token"])->getJson('/api/card/user?user_id=' . $id);
 
-        $response->assertJsonIsArray();;
+        $response->assertJsonIsObject();
     }
 
 }

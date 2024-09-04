@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('product_type', function(Blueprint $tb) {
 
             $tb->id();
-            $tb->string('name')->nullable()->unique();
+            $tb->string('name')->nullable();
             $tb->text('description')->nullable();
             $tb->timestamps();
 

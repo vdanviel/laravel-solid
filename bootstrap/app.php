@@ -19,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         
         $exceptions->render(function (\Throwable $th){
 
+            //se o Throwable for do tipo validation....
             if ($th instanceof ValidationException) {
                 return response()->json([
                     'status' => false,
@@ -27,7 +28,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 ], 422);
             }
     
-            // Para outras exceções que não são de validação, você pode personalizar a resposta
+            //se for outro tipo...
             return response()->json([
                 'status' => false,
                 'message' => $th->getMessage(),
