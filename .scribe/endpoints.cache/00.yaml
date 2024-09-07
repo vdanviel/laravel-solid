@@ -28,7 +28,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: beier.monique@example.com
+        example: octavia.berge@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,14 +37,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: repudiandae
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: beier.monique@example.com
-      password: repudiandae
+      email: octavia.berge@example.com
+      password: a
     fileParameters: []
     responses: []
     responseFields: []
@@ -169,7 +169,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: w
+        example: ghkdvohnmtcrwjq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -178,7 +178,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: armani03@example.org
+        example: crohan@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -187,7 +187,7 @@ endpoints:
         name: phone_number
         description: 'Must not be greater than 20 characters.'
         required: false
-        example: eywihqmrtvfzefc
+        example: qufpuy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -196,16 +196,16 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: "(SEYOunYSeJ'<+ypHPt"
+        example: "\"3'='q?I"
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: w
-      email: armani03@example.org
-      phone_number: eywihqmrtvfzefc
-      password: "(SEYOunYSeJ'<+ypHPt"
+      name: ghkdvohnmtcrwjq
+      email: crohan@example.net
+      phone_number: qufpuy
+      password: "\"3'='q?I"
     fileParameters: []
     responses: []
     responseFields: []
@@ -239,13 +239,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: emerson74@example.org
+        example: elta.sporer@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: emerson74@example.org
+      email: elta.sporer@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -328,7 +328,7 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: id
+        example: provident
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -337,14 +337,14 @@ endpoints:
         name: new_password
         description: ''
         required: true
-        example: voluptas
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: id
-      new_password: voluptas
+      token: provident
+      new_password: dolorem
     fileParameters: []
     responses: []
     responseFields: []
@@ -378,7 +378,7 @@ endpoints:
         name: id
         description: ''
         required: true
-        example: 12
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -387,7 +387,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: impedit
+        example: error
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -396,7 +396,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: ned34@example.com
+        example: madge.harvey@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -405,16 +405,16 @@ endpoints:
         name: phone_number
         description: ''
         required: true
-        example: sapiente
+        example: animi
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id: 12
-      name: impedit
-      email: ned34@example.com
-      phone_number: sapiente
+      id: 13
+      name: error
+      email: madge.harvey@example.net
+      phone_number: animi
     fileParameters: []
     responses: []
     responseFields: []
@@ -448,13 +448,13 @@ endpoints:
         name: id_user
         description: ''
         required: true
-        example: 17
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_user: 17
+      id_user: 7
     fileParameters: []
     responses:
       -
@@ -497,13 +497,13 @@ endpoints:
         name: id_user
         description: ''
         required: true
-        example: 3
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_user: 3
+      id_user: 19
     fileParameters: []
     responses: []
     responseFields: []
@@ -537,7 +537,7 @@ endpoints:
         name: id_user
         description: ''
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -546,7 +546,7 @@ endpoints:
         name: street
         description: ''
         required: true
-        example: earum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -555,7 +555,7 @@ endpoints:
         name: city
         description: ''
         required: true
-        example: id
+        example: animi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -564,7 +564,7 @@ endpoints:
         name: state
         description: ''
         required: true
-        example: aut
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -573,7 +573,7 @@ endpoints:
         name: zip_code
         description: ''
         required: true
-        example: sit
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -582,18 +582,18 @@ endpoints:
         name: country
         description: ''
         required: true
-        example: necessitatibus
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_user: 2
-      street: earum
-      city: id
-      state: aut
-      zip_code: sit
-      country: necessitatibus
+      id_user: 1
+      street: et
+      city: animi
+      state: consequatur
+      zip_code: ipsa
+      country: voluptatem
     fileParameters: []
     responses: []
     responseFields: []
@@ -627,7 +627,7 @@ endpoints:
         name: id_user
         description: ''
         required: true
-        example: 11
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -636,14 +636,14 @@ endpoints:
         name: id_address
         description: ''
         required: true
-        example: 15
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_user: 11
-      id_address: 15
+      id_user: 18
+      id_address: 16
     fileParameters: []
     responses: []
     responseFields: []
@@ -677,7 +677,7 @@ endpoints:
         name: id_address
         description: ''
         required: true
-        example: 8
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -686,7 +686,7 @@ endpoints:
         name: street
         description: ''
         required: false
-        example: rerum
+        example: neque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -695,7 +695,7 @@ endpoints:
         name: city
         description: ''
         required: false
-        example: enim
+        example: unde
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -704,7 +704,7 @@ endpoints:
         name: state
         description: ''
         required: false
-        example: quod
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -713,7 +713,7 @@ endpoints:
         name: zip_code
         description: ''
         required: false
-        example: eaque
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -722,18 +722,18 @@ endpoints:
         name: country
         description: ''
         required: false
-        example: quisquam
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_address: 8
-      street: rerum
-      city: enim
-      state: quod
-      zip_code: eaque
-      country: quisquam
+      id_address: 18
+      street: neque
+      city: unde
+      state: quia
+      zip_code: illo
+      country: eos
     fileParameters: []
     responses: []
     responseFields: []
@@ -816,13 +816,13 @@ endpoints:
         name: id_user
         description: ''
         required: true
-        example: 13
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_user: 13
+      id_user: 3
     fileParameters: []
     responses:
       -
@@ -865,13 +865,13 @@ endpoints:
         name: id_address
         description: ''
         required: true
-        example: 6
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_address: 6
+      id_address: 16
     fileParameters: []
     responses: []
     responseFields: []
@@ -905,7 +905,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: accusamus
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -914,14 +914,14 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Rerum laborum natus nobis minus corporis.'
+        example: 'Qui voluptatibus animi vero eligendi rerum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: accusamus
-      description: 'Rerum laborum natus nobis minus corporis.'
+      name: eum
+      description: 'Qui voluptatibus animi vero eligendi rerum.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -955,7 +955,7 @@ endpoints:
         name: id_type
         description: ''
         required: true
-        example: 15
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -964,7 +964,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: quis
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -973,15 +973,15 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Placeat a sed sint veritatis eius.'
+        example: 'Itaque perspiciatis ipsam doloremque est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_type: 15
-      name: quis
-      description: 'Placeat a sed sint veritatis eius.'
+      id_type: 10
+      name: vitae
+      description: 'Itaque perspiciatis ipsam doloremque est.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1093,13 +1093,13 @@ endpoints:
         name: id
         description: ''
         required: true
-        example: 2
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id: 2
+      id: 5
     fileParameters: []
     responses:
       -
@@ -1142,7 +1142,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: modi
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1151,7 +1151,7 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: exercitationem
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1160,7 +1160,7 @@ endpoints:
         name: company
         description: ''
         required: true
-        example: voluptatem
+        example: ducimus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1169,7 +1169,7 @@ endpoints:
         name: type_id
         description: ''
         required: true
-        example: 4
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1178,7 +1178,7 @@ endpoints:
         name: desc
         description: ''
         required: true
-        example: saepe
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1187,18 +1187,18 @@ endpoints:
         name: stock
         description: ''
         required: true
-        example: 17
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: modi
-      price: exercitationem
-      company: voluptatem
-      type_id: 4
-      desc: saepe
-      stock: 17
+      name: et
+      price: voluptas
+      company: ducimus
+      type_id: 14
+      desc: eos
+      stock: 7
     fileParameters: []
     responses: []
     responseFields: []
@@ -1232,7 +1232,7 @@ endpoints:
         name: id_product
         description: ''
         required: true
-        example: 20
+        example: 8
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1241,7 +1241,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: sed
+        example: dolores
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1250,7 +1250,7 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: laborum
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1259,7 +1259,7 @@ endpoints:
         name: company
         description: ''
         required: true
-        example: sit
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1268,7 +1268,7 @@ endpoints:
         name: type_id
         description: ''
         required: true
-        example: 20
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1277,7 +1277,7 @@ endpoints:
         name: desc
         description: ''
         required: true
-        example: vel
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1286,19 +1286,19 @@ endpoints:
         name: stock
         description: ''
         required: true
-        example: 5
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_product: 20
-      name: sed
-      price: laborum
-      company: sit
-      type_id: 20
-      desc: vel
-      stock: 5
+      id_product: 8
+      name: dolores
+      price: sunt
+      company: omnis
+      type_id: 13
+      desc: sed
+      stock: 19
     fileParameters: []
     responses: []
     responseFields: []
@@ -1332,13 +1332,13 @@ endpoints:
         name: id_user
         description: ''
         required: true
-        example: 10
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id_user: 10
+      id_user: 7
     fileParameters: []
     responses: []
     responseFields: []
@@ -1372,13 +1372,13 @@ endpoints:
         name: card_id
         description: ''
         required: true
-        example: 1
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      card_id: 1
+      card_id: 18
     fileParameters: []
     responses: []
     responseFields: []
@@ -1412,13 +1412,13 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: 13
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      user_id: 13
+      user_id: 7
     fileParameters: []
     responses:
       -
@@ -1470,7 +1470,7 @@ endpoints:
         name: card_id
         description: ''
         required: true
-        example: 11
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1479,15 +1479,15 @@ endpoints:
         name: qnt
         description: ''
         required: true
-        example: 9
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       product_id: 1
-      card_id: 11
-      qnt: 9
+      card_id: 9
+      qnt: 6
     fileParameters: []
     responses: []
     responseFields: []
@@ -1521,13 +1521,13 @@ endpoints:
         name: item_card_id
         description: ''
         required: true
-        example: 2
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      item_card_id: 2
+      item_card_id: 16
     fileParameters: []
     responses: []
     responseFields: []
@@ -1561,7 +1561,7 @@ endpoints:
         name: item_card_id
         description: ''
         required: true
-        example: 17
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1570,14 +1570,14 @@ endpoints:
         name: qnt
         description: ''
         required: true
-        example: 18
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      item_card_id: 17
-      qnt: 18
+      item_card_id: 6
+      qnt: 1
     fileParameters: []
     responses: []
     responseFields: []
@@ -1611,13 +1611,13 @@ endpoints:
         name: card_id
         description: ''
         required: true
-        example: 19
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      card_id: 19
+      card_id: 11
     fileParameters: []
     responses: []
     responseFields: []

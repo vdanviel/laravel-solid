@@ -1,5 +1,5 @@
 # Stripe Integration on Laravel
-This is a Laravel API integrated with Google Auth and Stripe (for web financial solutions), designed as an e-commerce API that allows users to add products to a cart and purchase them, with all payment processes handled by Stripe. The API is built using SOLID principles and PostgreSQL as its database. The project uses JWT for authentication, Stripe webhooks for payment processing, email sending for notifications, TDD for test-driven development, and includes end-to-end tests, among other features.
+This is a Laravel API integrated with Google Auth and Stripe (for web financial solutions), designed as an e-commerce API that allows users to add products to a cart and purchase them, with all payment processes handled by Stripe. The API is built using SOLID principles and PostgreSQL as its database. The project uses JWT for authentication, Stripe webhooks for payment processing, email sending for notifications, TDD for test-driven development, and includes end-to-end tests. Additionally, Scribe is used to save and manage the API documentation.
 
 ##### **I've created a logical databse model of this project, take a look:**
 ![logical-model](public/img/database-logical-model.png)
@@ -15,8 +15,6 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 
 ### That's it, below you can see the API reference documentation!
 ![michael-thanks](https://miro.medium.com/v2/resize:fit:960/0*kIrASm_jWM13i1tT.gif)
-
-# Docs
 
 ## Authentication and User Management
 
