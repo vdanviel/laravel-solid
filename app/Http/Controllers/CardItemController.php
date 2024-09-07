@@ -12,7 +12,6 @@ use App\Http\Requests\Card\Item\CardItemCreateRequest;
 use App\Http\Requests\Card\Item\CardItemRemoveRequest;
 use App\Http\Requests\Card\Item\CardItemUpdateQuantityRequest;
 
-
 class CardItemController extends Controller
 {
 

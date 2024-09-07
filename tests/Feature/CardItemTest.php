@@ -7,17 +7,11 @@ use App\Models\CardItem;
 use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\User;
-use App\Services\CardService;
-use App\Services\ProductService;
-use App\Services\ProductTypeService;
 use Tests\TestCase;
 
 class CardItemTest extends TestCase
 {
 
-    /**
-     * A basic feature test example.
-     */
     public function test_add_item_on_card(): void
     {
 

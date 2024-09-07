@@ -23,7 +23,7 @@ class RegisterProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'price' => 'required|decimal:2',
+            'price' => 'required|decimal:1',
             'company' => 'required|string',
             'type_id' => 'required|integer',
             'desc' => 'required|string',

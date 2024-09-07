@@ -75,3 +75,13 @@ Route::prefix('/item')->middleware(App\Http\Middleware\EnsureTokenIsValid::class
     Route::patch('/alter/qnt', [Controllers\CardItemController::class, 'alterItemQuantity']);
 
 });
+
+Route::prefix('/order')->group(function(){
+
+    Route::post('/register', [Controllers\OrderController::class, 'create'])->middleware(App\Http\Middleware\EnsureTokenIsValid::class);
+    Route::get('/success', [Controllers\OrderController::class, 'success']);
+    Route::get('/cancel', [Controllers\OrderController::class, 'cancel']);
+
+});
+
+Route::post('/stripe/webhook/payment', [Controllers\StripeController::class, 'handlePayment']);

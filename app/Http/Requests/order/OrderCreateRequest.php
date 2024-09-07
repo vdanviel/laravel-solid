@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Card;
+namespace App\Http\Requests\Order;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CardRegisterRequest extends FormRequest
+class OrderCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class CardRegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_user' => 'integer|required'
+            'card_id' => 'integer|required'
         ];
     }
 }

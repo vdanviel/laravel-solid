@@ -15,8 +15,6 @@ class JWTService {
 
     public function __construct(){
 
-        //dd(config('jwt.secret'), config('jwt.hash'));
-
         $this->secret = config('jwt.secret');//https://laravel.com/docs/11.x/helpers#method-config
         $this->hash = config('jwt.hash');
 

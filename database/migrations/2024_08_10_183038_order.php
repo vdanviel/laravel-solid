@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('order', function(Blueprint $tb){
@@ -25,16 +23,16 @@ return new class extends Migration
 
             $tb->string('payment_method')->nullable();
 
+            $tb->string('stripe_session_id')->nullable();
+
             $tb->timestamps();
 
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('order');
     }
+    
 };

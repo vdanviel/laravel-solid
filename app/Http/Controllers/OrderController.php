@@ -4,61 +4,86 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+#requests
+use App\Http\Requests\Order\OrderCreateRequest;
+use App\Services\OrderService;
+use Illuminate\Http\JsonResponse;
+
 class OrderController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function create(OrderCreateRequest $request)
     {
-        //
+        
+        try {
+
+            return OrderService::createSession($request->card_id);
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function success(){
+
+        try {
+
+            return new JsonResponse(
+                [
+                    'status' => 'success',
+                    'message' => "The payment was sucessfully done."
+                ]
+            );
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function cancel(){
+
+        try {
+
+            return new JsonResponse(
+                [
+                    'status' => 'cancel',
+                    'message' => "The payment was sucessfully cancelled."
+                ]
+            );
+
+        } catch (\Throwable $th) {
+
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => $th->getMessage(),
+                    'trace' => $th->getTrace()
+                ],
+                500
+            );
+            
+        }
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

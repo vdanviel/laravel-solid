@@ -10,4 +10,12 @@ class CardItem extends Model
     use HasFactory;
 
     protected $table = 'card_item';
+
+    protected $fillable = [
+        'product_id',
+        'card_id',
+        'amount',
+        'quantity'
+    ];
+    
 }
