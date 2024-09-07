@@ -13,7 +13,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 
 - After that run `php artisan serve` and you're good to go.
 
-### That's it, thanks for the support!
+### That's it, below you can see the API reference documentation!
 ![michael-thanks](https://miro.medium.com/v2/resize:fit:960/0*kIrASm_jWM13i1tT.gif)
 
 # Docs
