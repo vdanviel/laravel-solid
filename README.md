@@ -18,7 +18,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 
 ## Authentication and User Management
 
-1. **POST `/api/auth`** 
+ **POST `/api/auth`** 
    - **Description**: User authentication.
    - **Request Body**:
      ```json
@@ -28,15 +28,11 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
      }
      ```
 
-2. **GET `/api/google/oauth`** 
+ **GET `/api/google/oauth`** 
    - **Description**: Initiate Google OAuth.
    - **Request Body**: Not required.
 
-3. **GET `/api/google/oauth/callback`** 
-   - **Description**: Handle Google OAuth callback.
-   - **Request Body**: Not required.
-
-4. **POST `/api/user/register`** 
+ **POST `/api/user/register`** 
    - **Description**: Register a new user.
    - **Request Body**:
      ```json
@@ -48,7 +44,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
      }
      ```
 
-5. **POST `/api/user/mail/change/password`** 
+ **POST `/api/user/mail/change/password`** 
    - **Description**: Change password via email.
    - **Request Body**:
      ```json
@@ -57,7 +53,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
      }
      ```
 
-6. **GET `/api/user/check/token`** 
+ **GET `/api/user/check/token`** 
    - **Description**: Check if a token is valid.
    - **Request Body**:
      ```json
@@ -66,7 +62,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
      }
      ```
 
-7. **POST `/api/user/change/password`** 
+ **POST `/api/user/change/password`** 
    - **Description**: Change user password.
    - **Request Body**:
      ```json
@@ -76,7 +72,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
      }
      ```
 
-8. **PUT `/api/user/update`** 
+ **PUT `/api/user/update`** 
    - **Description**: Update user information.
    - **Request Body**:
      ```json
@@ -88,7 +84,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
      }
      ```
 
-9. **GET `/api/user/find`** 
+ **GET `/api/user/find`** 
    - **Description**: Find user by ID.
    - **Request Body**:
      ```json
@@ -97,7 +93,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
      }
      ```
 
-10. **DELETE `/api/user/delete`** 
+ **DELETE `/api/user/delete`** 
     - **Description**: Delete a user.
     - **Request Body**:
       ```json
@@ -108,7 +104,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 
 ## Address Management
 
-11. **POST `/api/user/address/add`** 
+ **POST `/api/user/address/add`** 
     - **Description**: Add a user address.
     - **Request Body**:
       ```json
@@ -122,7 +118,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-12. **PATCH `/api/user/address/switch`** 
+ **PATCH `/api/user/address/switch`** 
     - **Description**: Switch user address.
     - **Request Body**:
       ```json
@@ -132,7 +128,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-13. **PUT `/api/user/address/update`** 
+ **PUT `/api/user/address/update`** 
     - **Description**: Update a user's address.
     - **Request Body**:
       ```json
@@ -146,7 +142,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-14. **GET `/api/user/address/find`** 
+ **GET `/api/user/address/find`** 
     - **Description**: Find user address.
     - **Request Body**:
       ```json
@@ -155,7 +151,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-15. **DELETE `/api/user/address/remove`** 
+ **DELETE `/api/user/address/remove`** 
     - **Description**: Remove a user address.
     - **Request Body**:
       ```json
@@ -166,7 +162,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 
 ## Product Management
 
-16. **POST `/api/product/type/register`** 
+ **POST `/api/product/type/register`** 
     - **Description**: Register a new product type.
     - **Request Body**:
       ```json
@@ -176,7 +172,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-17. **PUT `/api/product/type/update`** 
+ **PUT `/api/product/type/update`** 
     - **Description**: Update a product type.
     - **Request Body**:
       ```json
@@ -187,7 +183,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-18. **POST `/api/product/register`** 
+ **POST `/api/product/register`** 
     - **Description**: Register a new product.
     - **Request Body**:
       ```json
@@ -201,7 +197,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-19. **PUT `/api/product/update`** 
+ **PUT `/api/product/update`** 
     - **Description**: Update a product.
     - **Request Body**:
       ```json
@@ -218,7 +214,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 
 ## Card Management
 
-20. **POST `/api/card/register`** 
+ **POST `/api/card/register`** 
     - **Description**: Register a new card for the user.
     - **Request Body**:
       ```json
@@ -227,7 +223,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-21. **DELETE `/api/card/delete`** 
+ **DELETE `/api/card/delete`** 
     - **Description**: Delete a card.
     - **Request Body**:
       ```json
@@ -236,21 +232,21 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
       }
       ```
 
-22. **GET `/api/card/user`** 
+ **GET `/api/card/user`** 
     - **Description**: List cards for a user.
     - **Request Body**: Not required.
 
 ## Product Type and Product Retrieval
 
-23. **GET `/api/product/type/index`** 
+**GET `/api/product/type/index`** 
     - **Description**: List all product types.
     - **Request Body**: Not required.
 
-24. **GET `/api/product/index`** 
+ **GET `/api/product/index`** 
     - **Description**: List all products.
     - **Request Body**: Not required.
 
-25. **GET `/api/product/find`** 
+ **GET `/api/product/find`** 
     - **Description**: Find a product by ID.
     - **Request Body**:
       ```json
