@@ -158,8 +158,8 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-item-alter-qnt">
                                 <a href="#endpoints-PATCHapi-item-alter-qnt">PATCH api/item/alter/qnt</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-order-register">
-                                <a href="#endpoints-GETapi-order-register">GET api/order/register</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-order-register">
+                                <a href="#endpoints-POSTapi-order-register">POST api/order/register</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-order-success">
                                 <a href="#endpoints-GETapi-order-success">GET api/order/success</a>
@@ -181,7 +181,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 6, 2024</li>
+        <li>Last updated: September 7, 2024</li>
     </ul>
 </div>
 
@@ -220,8 +220,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"delaney.dubuque@example.com\",
-    \"password\": \"rerum\"
+    \"email\": \"beier.monique@example.com\",
+    \"password\": \"repudiandae\"
 }"
 </code></pre></div>
 
@@ -237,8 +237,8 @@ const headers = {
 };
 
 let body = {
-    "email": "delaney.dubuque@example.com",
-    "password": "rerum"
+    "email": "beier.monique@example.com",
+    "password": "repudiandae"
 };
 
 fetch(url, {
@@ -327,10 +327,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth"
-               value="delaney.dubuque@example.com"
+               value="beier.monique@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>delaney.dubuque@example.com</code></p>
+<p>Must be a valid email address. Example: <code>beier.monique@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -338,10 +338,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth"
-               value="rerum"
+               value="repudiandae"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>repudiandae</code></p>
         </div>
         </form>
 
@@ -620,10 +620,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"yleki\",
-    \"email\": \"bernhard.mitchel@example.net\",
-    \"phone_number\": \"crivzzmnbxpljxta\",
-    \"password\": \"QwC+76@CJkl~[xiJN_NO\"
+    \"name\": \"w\",
+    \"email\": \"armani03@example.org\",
+    \"phone_number\": \"eywihqmrtvfzefc\",
+    \"password\": \"(SEYOunYSeJ\'&lt;+ypHPt\"
 }"
 </code></pre></div>
 
@@ -639,10 +639,10 @@ const headers = {
 };
 
 let body = {
-    "name": "yleki",
-    "email": "bernhard.mitchel@example.net",
-    "phone_number": "crivzzmnbxpljxta",
-    "password": "QwC+76@CJkl~[xiJN_NO"
+    "name": "w",
+    "email": "armani03@example.org",
+    "phone_number": "eywihqmrtvfzefc",
+    "password": "(SEYOunYSeJ'&lt;+ypHPt"
 };
 
 fetch(url, {
@@ -731,10 +731,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-user-register"
-               value="yleki"
+               value="w"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>yleki</code></p>
+<p>Must not be greater than 255 characters. Example: <code>w</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -742,10 +742,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-user-register"
-               value="bernhard.mitchel@example.net"
+               value="armani03@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>bernhard.mitchel@example.net</code></p>
+<p>Must be a valid email address. Example: <code>armani03@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
@@ -753,10 +753,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="phone_number"                data-endpoint="POSTapi-user-register"
-               value="crivzzmnbxpljxta"
+               value="eywihqmrtvfzefc"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>crivzzmnbxpljxta</code></p>
+<p>Must not be greater than 20 characters. Example: <code>eywihqmrtvfzefc</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -764,10 +764,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-user-register"
-               value="QwC+76@CJkl~[xiJN_NO"
+               value="(SEYOunYSeJ'<+ypHPt"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>QwC+76@CJkl~[xiJN_NO</code></p>
+<p>Must be at least 8 characters. Example: <code>(SEYOunYSeJ'&lt;+ypHPt</code></p>
         </div>
         </form>
 
@@ -788,7 +788,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"hayes.maeve@example.net\"
+    \"email\": \"emerson74@example.org\"
 }"
 </code></pre></div>
 
@@ -804,7 +804,7 @@ const headers = {
 };
 
 let body = {
-    "email": "hayes.maeve@example.net"
+    "email": "emerson74@example.org"
 };
 
 fetch(url, {
@@ -893,10 +893,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-user-mail-change-password"
-               value="hayes.maeve@example.net"
+               value="emerson74@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>hayes.maeve@example.net</code></p>
+<p>Must be a valid email address. Example: <code>emerson74@example.org</code></p>
         </div>
         </form>
 
@@ -917,7 +917,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"in\"
+    \"token\": \"consequatur\"
 }"
 </code></pre></div>
 
@@ -933,7 +933,7 @@ const headers = {
 };
 
 let body = {
-    "token": "in"
+    "token": "consequatur"
 };
 
 fetch(url, {
@@ -1039,10 +1039,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="GETapi-user-check-token"
-               value="in"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
         </form>
 
@@ -1063,8 +1063,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"reiciendis\",
-    \"new_password\": \"vero\"
+    \"token\": \"id\",
+    \"new_password\": \"voluptas\"
 }"
 </code></pre></div>
 
@@ -1080,8 +1080,8 @@ const headers = {
 };
 
 let body = {
-    "token": "reiciendis",
-    "new_password": "vero"
+    "token": "id",
+    "new_password": "voluptas"
 };
 
 fetch(url, {
@@ -1170,10 +1170,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-user-change-password"
-               value="reiciendis"
+               value="id"
                data-component="body">
     <br>
-<p>Example: <code>reiciendis</code></p>
+<p>Example: <code>id</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>new_password</code></b>&nbsp;&nbsp;
@@ -1181,10 +1181,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="new_password"                data-endpoint="POSTapi-user-change-password"
-               value="vero"
+               value="voluptas"
                data-component="body">
     <br>
-<p>Example: <code>vero</code></p>
+<p>Example: <code>voluptas</code></p>
         </div>
         </form>
 
@@ -1205,10 +1205,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": 15,
-    \"name\": \"aut\",
-    \"email\": \"arianna02@example.com\",
-    \"phone_number\": \"voluptatem\"
+    \"id\": 12,
+    \"name\": \"impedit\",
+    \"email\": \"ned34@example.com\",
+    \"phone_number\": \"sapiente\"
 }"
 </code></pre></div>
 
@@ -1224,10 +1224,10 @@ const headers = {
 };
 
 let body = {
-    "id": 15,
-    "name": "aut",
-    "email": "arianna02@example.com",
-    "phone_number": "voluptatem"
+    "id": 12,
+    "name": "impedit",
+    "email": "ned34@example.com",
+    "phone_number": "sapiente"
 };
 
 fetch(url, {
@@ -1316,10 +1316,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-user-update"
-               value="15"
+               value="12"
                data-component="body">
     <br>
-<p>Example: <code>15</code></p>
+<p>Example: <code>12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -1327,10 +1327,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-user-update"
-               value="aut"
+               value="impedit"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>impedit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1338,10 +1338,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-user-update"
-               value="arianna02@example.com"
+               value="ned34@example.com"
                data-component="body">
     <br>
-<p>Example: <code>arianna02@example.com</code></p>
+<p>Example: <code>ned34@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
@@ -1349,10 +1349,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="phone_number"                data-endpoint="PUTapi-user-update"
-               value="voluptatem"
+               value="sapiente"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>sapiente</code></p>
         </div>
         </form>
 
@@ -1373,7 +1373,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_user\": 19
+    \"id_user\": 17
 }"
 </code></pre></div>
 
@@ -1389,7 +1389,7 @@ const headers = {
 };
 
 let body = {
-    "id_user": 19
+    "id_user": 17
 };
 
 fetch(url, {
@@ -1500,10 +1500,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_user"                data-endpoint="GETapi-user-find"
-               value="19"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>19</code></p>
+<p>Example: <code>17</code></p>
         </div>
         </form>
 
@@ -1524,7 +1524,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_user\": 7
+    \"id_user\": 3
 }"
 </code></pre></div>
 
@@ -1540,7 +1540,7 @@ const headers = {
 };
 
 let body = {
-    "id_user": 7
+    "id_user": 3
 };
 
 fetch(url, {
@@ -1629,10 +1629,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_user"                data-endpoint="DELETEapi-user-delete"
-               value="7"
+               value="3"
                data-component="body">
     <br>
-<p>Example: <code>7</code></p>
+<p>Example: <code>3</code></p>
         </div>
         </form>
 
@@ -1653,12 +1653,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_user\": 17,
-    \"street\": \"sunt\",
-    \"city\": \"est\",
+    \"id_user\": 2,
+    \"street\": \"earum\",
+    \"city\": \"id\",
     \"state\": \"aut\",
-    \"zip_code\": \"id\",
-    \"country\": \"placeat\"
+    \"zip_code\": \"sit\",
+    \"country\": \"necessitatibus\"
 }"
 </code></pre></div>
 
@@ -1674,12 +1674,12 @@ const headers = {
 };
 
 let body = {
-    "id_user": 17,
-    "street": "sunt",
-    "city": "est",
+    "id_user": 2,
+    "street": "earum",
+    "city": "id",
     "state": "aut",
-    "zip_code": "id",
-    "country": "placeat"
+    "zip_code": "sit",
+    "country": "necessitatibus"
 };
 
 fetch(url, {
@@ -1768,10 +1768,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_user"                data-endpoint="POSTapi-user-address-add"
-               value="17"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>17</code></p>
+<p>Example: <code>2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>street</code></b>&nbsp;&nbsp;
@@ -1779,10 +1779,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="street"                data-endpoint="POSTapi-user-address-add"
-               value="sunt"
+               value="earum"
                data-component="body">
     <br>
-<p>Example: <code>sunt</code></p>
+<p>Example: <code>earum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -1790,10 +1790,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="city"                data-endpoint="POSTapi-user-address-add"
-               value="est"
+               value="id"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>id</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>state</code></b>&nbsp;&nbsp;
@@ -1812,10 +1812,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="zip_code"                data-endpoint="POSTapi-user-address-add"
-               value="id"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>id</code></p>
+<p>Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>country</code></b>&nbsp;&nbsp;
@@ -1823,10 +1823,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="country"                data-endpoint="POSTapi-user-address-add"
-               value="placeat"
+               value="necessitatibus"
                data-component="body">
     <br>
-<p>Example: <code>placeat</code></p>
+<p>Example: <code>necessitatibus</code></p>
         </div>
         </form>
 
@@ -1847,8 +1847,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_user\": 4,
-    \"id_address\": 12
+    \"id_user\": 11,
+    \"id_address\": 15
 }"
 </code></pre></div>
 
@@ -1864,8 +1864,8 @@ const headers = {
 };
 
 let body = {
-    "id_user": 4,
-    "id_address": 12
+    "id_user": 11,
+    "id_address": 15
 };
 
 fetch(url, {
@@ -1954,10 +1954,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_user"                data-endpoint="PATCHapi-user-address-switch"
-               value="4"
+               value="11"
                data-component="body">
     <br>
-<p>Example: <code>4</code></p>
+<p>Example: <code>11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_address</code></b>&nbsp;&nbsp;
@@ -1965,10 +1965,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_address"                data-endpoint="PATCHapi-user-address-switch"
-               value="12"
+               value="15"
                data-component="body">
     <br>
-<p>Example: <code>12</code></p>
+<p>Example: <code>15</code></p>
         </div>
         </form>
 
@@ -1989,12 +1989,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_address\": 10,
-    \"street\": \"sapiente\",
-    \"city\": \"laudantium\",
-    \"state\": \"cum\",
-    \"zip_code\": \"aliquam\",
-    \"country\": \"voluptatem\"
+    \"id_address\": 8,
+    \"street\": \"rerum\",
+    \"city\": \"enim\",
+    \"state\": \"quod\",
+    \"zip_code\": \"eaque\",
+    \"country\": \"quisquam\"
 }"
 </code></pre></div>
 
@@ -2010,12 +2010,12 @@ const headers = {
 };
 
 let body = {
-    "id_address": 10,
-    "street": "sapiente",
-    "city": "laudantium",
-    "state": "cum",
-    "zip_code": "aliquam",
-    "country": "voluptatem"
+    "id_address": 8,
+    "street": "rerum",
+    "city": "enim",
+    "state": "quod",
+    "zip_code": "eaque",
+    "country": "quisquam"
 };
 
 fetch(url, {
@@ -2104,10 +2104,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_address"                data-endpoint="PUTapi-user-address-update"
-               value="10"
+               value="8"
                data-component="body">
     <br>
-<p>Example: <code>10</code></p>
+<p>Example: <code>8</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>street</code></b>&nbsp;&nbsp;
@@ -2115,10 +2115,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="street"                data-endpoint="PUTapi-user-address-update"
-               value="sapiente"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>sapiente</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -2126,10 +2126,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="city"                data-endpoint="PUTapi-user-address-update"
-               value="laudantium"
+               value="enim"
                data-component="body">
     <br>
-<p>Example: <code>laudantium</code></p>
+<p>Example: <code>enim</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>state</code></b>&nbsp;&nbsp;
@@ -2137,10 +2137,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="state"                data-endpoint="PUTapi-user-address-update"
-               value="cum"
+               value="quod"
                data-component="body">
     <br>
-<p>Example: <code>cum</code></p>
+<p>Example: <code>quod</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>zip_code</code></b>&nbsp;&nbsp;
@@ -2148,10 +2148,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="zip_code"                data-endpoint="PUTapi-user-address-update"
-               value="aliquam"
+               value="eaque"
                data-component="body">
     <br>
-<p>Example: <code>aliquam</code></p>
+<p>Example: <code>eaque</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>country</code></b>&nbsp;&nbsp;
@@ -2159,10 +2159,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="country"                data-endpoint="PUTapi-user-address-update"
-               value="voluptatem"
+               value="quisquam"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>quisquam</code></p>
         </div>
         </form>
 
@@ -2183,7 +2183,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_address\": 6
+    \"id_address\": 18
 }"
 </code></pre></div>
 
@@ -2199,7 +2199,7 @@ const headers = {
 };
 
 let body = {
-    "id_address": 6
+    "id_address": 18
 };
 
 fetch(url, {
@@ -2305,10 +2305,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_address"                data-endpoint="GETapi-user-address-find"
-               value="6"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>6</code></p>
+<p>Example: <code>18</code></p>
         </div>
         </form>
 
@@ -2329,7 +2329,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_user\": 18
+    \"id_user\": 13
 }"
 </code></pre></div>
 
@@ -2345,7 +2345,7 @@ const headers = {
 };
 
 let body = {
-    "id_user": 18
+    "id_user": 13
 };
 
 fetch(url, {
@@ -2451,10 +2451,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_user"                data-endpoint="GETapi-user-address-index"
-               value="18"
+               value="13"
                data-component="body">
     <br>
-<p>Example: <code>18</code></p>
+<p>Example: <code>13</code></p>
         </div>
         </form>
 
@@ -2475,7 +2475,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_address\": 8
+    \"id_address\": 6
 }"
 </code></pre></div>
 
@@ -2491,7 +2491,7 @@ const headers = {
 };
 
 let body = {
-    "id_address": 8
+    "id_address": 6
 };
 
 fetch(url, {
@@ -2580,10 +2580,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_address"                data-endpoint="DELETEapi-user-address-remove"
-               value="8"
+               value="6"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>6</code></p>
         </div>
         </form>
 
@@ -2604,8 +2604,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"nulla\",
-    \"description\": \"Error autem quibusdam dolorem corrupti et a ut.\"
+    \"name\": \"accusamus\",
+    \"description\": \"Rerum laborum natus nobis minus corporis.\"
 }"
 </code></pre></div>
 
@@ -2621,8 +2621,8 @@ const headers = {
 };
 
 let body = {
-    "name": "nulla",
-    "description": "Error autem quibusdam dolorem corrupti et a ut."
+    "name": "accusamus",
+    "description": "Rerum laborum natus nobis minus corporis."
 };
 
 fetch(url, {
@@ -2711,10 +2711,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-product-type-register"
-               value="nulla"
+               value="accusamus"
                data-component="body">
     <br>
-<p>Example: <code>nulla</code></p>
+<p>Example: <code>accusamus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2722,10 +2722,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-product-type-register"
-               value="Error autem quibusdam dolorem corrupti et a ut."
+               value="Rerum laborum natus nobis minus corporis."
                data-component="body">
     <br>
-<p>Example: <code>Error autem quibusdam dolorem corrupti et a ut.</code></p>
+<p>Example: <code>Rerum laborum natus nobis minus corporis.</code></p>
         </div>
         </form>
 
@@ -2746,9 +2746,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_type\": 9,
-    \"name\": \"dolorum\",
-    \"description\": \"Possimus maxime sapiente illum laboriosam ratione.\"
+    \"id_type\": 15,
+    \"name\": \"quis\",
+    \"description\": \"Placeat a sed sint veritatis eius.\"
 }"
 </code></pre></div>
 
@@ -2764,9 +2764,9 @@ const headers = {
 };
 
 let body = {
-    "id_type": 9,
-    "name": "dolorum",
-    "description": "Possimus maxime sapiente illum laboriosam ratione."
+    "id_type": 15,
+    "name": "quis",
+    "description": "Placeat a sed sint veritatis eius."
 };
 
 fetch(url, {
@@ -2855,10 +2855,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_type"                data-endpoint="PUTapi-product-type-update"
-               value="9"
+               value="15"
                data-component="body">
     <br>
-<p>Example: <code>9</code></p>
+<p>Example: <code>15</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -2866,10 +2866,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-product-type-update"
-               value="dolorum"
+               value="quis"
                data-component="body">
     <br>
-<p>Example: <code>dolorum</code></p>
+<p>Example: <code>quis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2877,10 +2877,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-product-type-update"
-               value="Possimus maxime sapiente illum laboriosam ratione."
+               value="Placeat a sed sint veritatis eius."
                data-component="body">
     <br>
-<p>Example: <code>Possimus maxime sapiente illum laboriosam ratione.</code></p>
+<p>Example: <code>Placeat a sed sint veritatis eius.</code></p>
         </div>
         </form>
 
@@ -3151,7 +3151,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": 8
+    \"id\": 2
 }"
 </code></pre></div>
 
@@ -3167,7 +3167,7 @@ const headers = {
 };
 
 let body = {
-    "id": 8
+    "id": 2
 };
 
 fetch(url, {
@@ -3273,10 +3273,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-product-find"
-               value="8"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>2</code></p>
         </div>
         </form>
 
@@ -3297,12 +3297,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"tenetur\",
-    \"price\": \"amet\",
-    \"company\": \"vel\",
-    \"type_id\": 3,
-    \"desc\": \"rem\",
-    \"stock\": 7
+    \"name\": \"modi\",
+    \"price\": \"exercitationem\",
+    \"company\": \"voluptatem\",
+    \"type_id\": 4,
+    \"desc\": \"saepe\",
+    \"stock\": 17
 }"
 </code></pre></div>
 
@@ -3318,12 +3318,12 @@ const headers = {
 };
 
 let body = {
-    "name": "tenetur",
-    "price": "amet",
-    "company": "vel",
-    "type_id": 3,
-    "desc": "rem",
-    "stock": 7
+    "name": "modi",
+    "price": "exercitationem",
+    "company": "voluptatem",
+    "type_id": 4,
+    "desc": "saepe",
+    "stock": 17
 };
 
 fetch(url, {
@@ -3412,10 +3412,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-product-register"
-               value="tenetur"
+               value="modi"
                data-component="body">
     <br>
-<p>Example: <code>tenetur</code></p>
+<p>Example: <code>modi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -3423,10 +3423,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="price"                data-endpoint="POSTapi-product-register"
-               value="amet"
+               value="exercitationem"
                data-component="body">
     <br>
-<p>Example: <code>amet</code></p>
+<p>Example: <code>exercitationem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>company</code></b>&nbsp;&nbsp;
@@ -3434,10 +3434,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="company"                data-endpoint="POSTapi-product-register"
-               value="vel"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>vel</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>type_id</code></b>&nbsp;&nbsp;
@@ -3445,10 +3445,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="type_id"                data-endpoint="POSTapi-product-register"
-               value="3"
+               value="4"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>desc</code></b>&nbsp;&nbsp;
@@ -3456,10 +3456,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="desc"                data-endpoint="POSTapi-product-register"
-               value="rem"
+               value="saepe"
                data-component="body">
     <br>
-<p>Example: <code>rem</code></p>
+<p>Example: <code>saepe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>stock</code></b>&nbsp;&nbsp;
@@ -3467,10 +3467,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="stock"                data-endpoint="POSTapi-product-register"
-               value="7"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>7</code></p>
+<p>Example: <code>17</code></p>
         </div>
         </form>
 
@@ -3491,13 +3491,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_product\": 19,
-    \"name\": \"et\",
-    \"price\": \"et\",
-    \"company\": \"qui\",
-    \"type_id\": 8,
-    \"desc\": \"cum\",
-    \"stock\": 3
+    \"id_product\": 20,
+    \"name\": \"sed\",
+    \"price\": \"laborum\",
+    \"company\": \"sit\",
+    \"type_id\": 20,
+    \"desc\": \"vel\",
+    \"stock\": 5
 }"
 </code></pre></div>
 
@@ -3513,13 +3513,13 @@ const headers = {
 };
 
 let body = {
-    "id_product": 19,
-    "name": "et",
-    "price": "et",
-    "company": "qui",
-    "type_id": 8,
-    "desc": "cum",
-    "stock": 3
+    "id_product": 20,
+    "name": "sed",
+    "price": "laborum",
+    "company": "sit",
+    "type_id": 20,
+    "desc": "vel",
+    "stock": 5
 };
 
 fetch(url, {
@@ -3608,10 +3608,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_product"                data-endpoint="PUTapi-product-update"
-               value="19"
+               value="20"
                data-component="body">
     <br>
-<p>Example: <code>19</code></p>
+<p>Example: <code>20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -3619,10 +3619,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-product-update"
-               value="et"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -3630,10 +3630,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="price"                data-endpoint="PUTapi-product-update"
-               value="et"
+               value="laborum"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>laborum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>company</code></b>&nbsp;&nbsp;
@@ -3641,10 +3641,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="company"                data-endpoint="PUTapi-product-update"
-               value="qui"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>type_id</code></b>&nbsp;&nbsp;
@@ -3652,10 +3652,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="type_id"                data-endpoint="PUTapi-product-update"
-               value="8"
+               value="20"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>desc</code></b>&nbsp;&nbsp;
@@ -3663,10 +3663,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="desc"                data-endpoint="PUTapi-product-update"
-               value="cum"
+               value="vel"
                data-component="body">
     <br>
-<p>Example: <code>cum</code></p>
+<p>Example: <code>vel</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>stock</code></b>&nbsp;&nbsp;
@@ -3674,10 +3674,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="stock"                data-endpoint="PUTapi-product-update"
-               value="3"
+               value="5"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>5</code></p>
         </div>
         </form>
 
@@ -3698,7 +3698,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id_user\": 20
+    \"id_user\": 10
 }"
 </code></pre></div>
 
@@ -3714,7 +3714,7 @@ const headers = {
 };
 
 let body = {
-    "id_user": 20
+    "id_user": 10
 };
 
 fetch(url, {
@@ -3803,10 +3803,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id_user"                data-endpoint="POSTapi-card-register"
-               value="20"
+               value="10"
                data-component="body">
     <br>
-<p>Example: <code>20</code></p>
+<p>Example: <code>10</code></p>
         </div>
         </form>
 
@@ -3956,7 +3956,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 5
+    \"user_id\": 13
 }"
 </code></pre></div>
 
@@ -3972,7 +3972,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": 5
+    "user_id": 13
 };
 
 fetch(url, {
@@ -4078,10 +4078,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="GETapi-card-user"
-               value="5"
+               value="13"
                data-component="body">
     <br>
-<p>Example: <code>5</code></p>
+<p>Example: <code>13</code></p>
         </div>
         </form>
 
@@ -4102,9 +4102,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"product_id\": 4,
-    \"card_id\": 17,
-    \"qnt\": 17
+    \"product_id\": 1,
+    \"card_id\": 11,
+    \"qnt\": 9
 }"
 </code></pre></div>
 
@@ -4120,9 +4120,9 @@ const headers = {
 };
 
 let body = {
-    "product_id": 4,
-    "card_id": 17,
-    "qnt": 17
+    "product_id": 1,
+    "card_id": 11,
+    "qnt": 9
 };
 
 fetch(url, {
@@ -4211,10 +4211,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="product_id"                data-endpoint="POSTapi-item-add"
-               value="4"
+               value="1"
                data-component="body">
     <br>
-<p>Example: <code>4</code></p>
+<p>Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>card_id</code></b>&nbsp;&nbsp;
@@ -4222,10 +4222,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="card_id"                data-endpoint="POSTapi-item-add"
-               value="17"
+               value="11"
                data-component="body">
     <br>
-<p>Example: <code>17</code></p>
+<p>Example: <code>11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>qnt</code></b>&nbsp;&nbsp;
@@ -4233,10 +4233,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="qnt"                data-endpoint="POSTapi-item-add"
-               value="17"
+               value="9"
                data-component="body">
     <br>
-<p>Example: <code>17</code></p>
+<p>Example: <code>9</code></p>
         </div>
         </form>
 
@@ -4257,7 +4257,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"item_card_id\": 17
+    \"item_card_id\": 2
 }"
 </code></pre></div>
 
@@ -4273,7 +4273,7 @@ const headers = {
 };
 
 let body = {
-    "item_card_id": 17
+    "item_card_id": 2
 };
 
 fetch(url, {
@@ -4362,10 +4362,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="item_card_id"                data-endpoint="DELETEapi-item-remove"
-               value="17"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>17</code></p>
+<p>Example: <code>2</code></p>
         </div>
         </form>
 
@@ -4386,8 +4386,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"item_card_id\": 8,
-    \"qnt\": 6
+    \"item_card_id\": 17,
+    \"qnt\": 18
 }"
 </code></pre></div>
 
@@ -4403,8 +4403,8 @@ const headers = {
 };
 
 let body = {
-    "item_card_id": 8,
-    "qnt": 6
+    "item_card_id": 17,
+    "qnt": 18
 };
 
 fetch(url, {
@@ -4493,10 +4493,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="item_card_id"                data-endpoint="PATCHapi-item-alter-qnt"
-               value="8"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>qnt</code></b>&nbsp;&nbsp;
@@ -4504,31 +4504,31 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="qnt"                data-endpoint="PATCHapi-item-alter-qnt"
-               value="6"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>6</code></p>
+<p>Example: <code>18</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-order-register">GET api/order/register</h2>
+                    <h2 id="endpoints-POSTapi-order-register">POST api/order/register</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-order-register">
+<span id="example-requests-POSTapi-order-register">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/api/order/register" \
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/api/order/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"card_id\": 10
+    \"card_id\": 19
 }"
 </code></pre></div>
 
@@ -4544,80 +4544,63 @@ const headers = {
 };
 
 let body = {
-    "card_id": 10
+    "card_id": 19
 };
 
 fetch(url, {
-    method: "GET",
+    method: "POST",
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-order-register">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;jwt&quot;: false,
-    &quot;jwt_error&quot;: &quot;Authorization token is required.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-order-register" hidden>
+<span id="example-responses-POSTapi-order-register">
+</span>
+<span id="execution-results-POSTapi-order-register" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-order-register"></span>:
+                id="execution-response-status-POSTapi-order-register"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-order-register"
+    <pre class="json"><code id="execution-response-content-POSTapi-order-register"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-order-register" hidden>
+<span id="execution-error-POSTapi-order-register" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-order-register">
+    <pre><code id="execution-error-message-POSTapi-order-register">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-order-register" data-method="GET"
+<form id="form-POSTapi-order-register" data-method="POST"
       data-path="api/order/register"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-order-register', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-order-register', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-order-register"
-                    onclick="tryItOut('GETapi-order-register');">Try it out ⚡
+                    id="btn-tryout-POSTapi-order-register"
+                    onclick="tryItOut('POSTapi-order-register');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-order-register"
-                    onclick="cancelTryOut('GETapi-order-register');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-order-register"
+                    onclick="cancelTryOut('POSTapi-order-register');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-order-register"
+                    id="btn-executetryout-POSTapi-order-register"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
             </button>
             </h3>
             <p>
-            <small class="badge badge-green">GET</small>
+            <small class="badge badge-black">POST</small>
             <b><code>api/order/register</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
@@ -4626,7 +4609,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-order-register"
+                              name="Content-Type"                data-endpoint="POSTapi-order-register"
                value="application/json"
                data-component="header">
     <br>
@@ -4637,7 +4620,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-order-register"
+                              name="Accept"                data-endpoint="POSTapi-order-register"
                value="application/json"
                data-component="header">
     <br>
@@ -4649,11 +4632,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="card_id"                data-endpoint="GETapi-order-register"
-               value="10"
+               step="any"               name="card_id"                data-endpoint="POSTapi-order-register"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>10</code></p>
+<p>Example: <code>19</code></p>
         </div>
         </form>
 
@@ -4694,7 +4677,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-order-success">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -4706,8 +4689,8 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;jwt&quot;: false,
-    &quot;jwt_error&quot;: &quot;Authorization token is required.&quot;
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;The payment was sucessfully done.&quot;
 }</code>
  </pre>
     </span>
@@ -4819,7 +4802,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-order-cancel">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -4831,8 +4814,8 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;jwt&quot;: false,
-    &quot;jwt_error&quot;: &quot;Authorization token is required.&quot;
+    &quot;status&quot;: &quot;cancel&quot;,
+    &quot;message&quot;: &quot;The payment was sucessfully cancelled.&quot;
 }</code>
  </pre>
     </span>
