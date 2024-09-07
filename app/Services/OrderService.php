@@ -47,6 +47,17 @@ class OrderService {
         
         //procurando o endereço do usuario que fez o pedido..
         $card = Card::find($card_id);
+
+        if (!$card) {
+            return new JsonResponse(
+                [
+                    'status' => false,
+                    'message' => "Card doesn't exists."
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
+            );
+        }
+
         $address = Address::where('user_id', $card->user_id)->where('active', true)->first();
         
         //se ele n tem endereço ativo ou n tem endereços ele n pode fazer pedidio..
