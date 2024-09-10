@@ -1,27 +1,27 @@
 # Stripe Integration on Laravel
 
-Este é um API em Laravel integrado com Google Auth e Stripe (para soluções financeiras web), projetado como uma API de e-commerce que permite aos usuários adicionar produtos a um carrinho e comprá-los, com todos os processos de pagamento sendo gerenciados pelo Stripe. A API é construída usando princípios SOLID e PostgreSQL como seu banco de dados. O projeto usa JWT para autenticação, webhooks do Stripe para processamento de pagamentos, envio de emails para notificações, TDD para desenvolvimento orientado por testes, e inclui testes end-to-end. Além disso, Scribe é usado para salvar e gerenciar a documentação da API.
+This is a Laravel API integrated with Google Auth and Stripe (for web financial solutions), designed as an e-commerce API that allows users to add products to a cart and purchase them, with all payment processes managed by Stripe. The API is built using SOLID principles and PostgreSQL as its database. The project uses JWT for authentication, Stripe webhooks for payment processing, email sending for notifications, TDD for test-driven development, and includes end-to-end testing. Additionally, Scribe is used to save and manage API documentation.
 
-##### **Eu criei um modelo de banco de dados lógico deste projeto, dê uma olhada:**
+##### **I created a logical database model for this project, take a look:**
 ![logical-model](public/img/database-logical-model.png)
 
-## Rodando o projeto com Laravel Artisan:
+## Running the project with Laravel Artisan:
 
-- A primeira coisa que você deve fazer é adicionar seu arquivo `.env` com as credenciais do banco de dados que você deseja usar, por exemplo:
-![exemple-env](https://parzibyte.me/blog/wp-content/uploads/2019/03/Env-de-Laravel-para-MySQL.png)
+- The first thing you should do is add your `.env` file with the database credentials you want to use, for example:
+![example-env](https://parzibyte.me/blog/wp-content/uploads/2019/03/Env-de-Laravel-para-MySQL.png)
 
-- Em seguida, execute `php artisan migrate` para rodar toda a estrutura de banco de dados necessária para o projeto. UM DETALHE MUITO IMPORTANTE: você precisa adicionar três variáveis no seu .env, que são: `SECRET_KEY_JWT` sua chave secreta do JWT, `HASH_TYPE_JWT` seu tipo de hash JWT (estou usando HS256 neste projeto), `SECRET_KEY_STRIPE` sua API Key do Stripe, `WEBHOOK_SECRET_STRIPE` sua chave de autorização do webhook.
+- Then run `php artisan migrate` to run all the necessary database structure for the project. A VERY IMPORTANT DETAIL: you need to add three variables in your .env, which are: `SECRET_KEY_JWT` your JWT secret key, `HASH_TYPE_JWT` your JWT hash type (I am using HS256 in this project), `SECRET_KEY_STRIPE` your Stripe API Key, `WEBHOOK_SECRET_STRIPE` your webhook authorization key.
 
-- Depois disso, execute `php artisan serve` e pronto.
+- After that, run `php artisan serve` and you are all set.
 
-### É isso, abaixo você pode ver a documentação de referência da API!
+### That's it, below you can see the API reference documentation!
 ![michael-thanks](https://miro.medium.com/v2/resize:fit:960/0*kIrASm_jWM13i1tT.gif)
 
 ## Authentication and User Management
 
  **POST `/api/auth`** 
-   - **Descrição**: Autenticação de usuário.
-   - **Corpo da Requisição**:
+   - **Description**: User authentication.
+   - **Request Body**:
      ```json
      {
        "email": "string",
@@ -30,12 +30,12 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
      ```
 
  **GET `/api/google/oauth`** 
-   - **Descrição**: Iniciar o OAuth do Google.
-   - **Corpo da Requisição**: Não é necessário.
+   - **Description**: Start Google OAuth.
+   - **Request Body**: Not required.
 
  **POST `/api/user/register`** 
-   - **Descrição**: Registrar um novo usuário.
-   - **Corpo da Requisição**:
+   - **Description**: Register a new user.
+   - **Request Body**:
      ```json
      {
        "name": "string",
@@ -46,8 +46,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
      ```
 
  **POST `/api/user/mail/change/password`** 
-   - **Descrição**: Alterar a senha via email.
-   - **Corpo da Requisição**:
+   - **Description**: Change password via email.
+   - **Request Body**:
      ```json
      {
        "email": "string"
@@ -55,8 +55,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
      ```
 
  **GET `/api/user/check/token`** 
-   - **Descrição**: Verificar se um token é válido.
-   - **Corpo da Requisição**:
+   - **Description**: Check if a token is valid.
+   - **Request Body**:
      ```json
      {
        "token": "string"
@@ -64,8 +64,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
      ```
 
  **POST `/api/user/change/password`** 
-   - **Descrição**: Alterar a senha do usuário.
-   - **Corpo da Requisição**:
+   - **Description**: Change the user's password.
+   - **Request Body**:
      ```json
      {
        "token": "string",
@@ -74,8 +74,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
      ```
 
  **PUT `/api/user/update`** 
-   - **Descrição**: Atualizar informações do usuário.
-   - **Corpo da Requisição**:
+   - **Description**: Update user information.
+   - **Request Body**:
      ```json
      {
        "id": "integer",
@@ -86,8 +86,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
      ```
 
  **GET `/api/user/find`** 
-   - **Descrição**: Encontrar usuário por ID.
-   - **Corpo da Requisição**:
+   - **Description**: Find user by ID.
+   - **Request Body**:
      ```json
      {
        "id_user": "integer"
@@ -95,8 +95,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
      ```
 
  **DELETE `/api/user/delete`** 
-    - **Descrição**: Excluir um usuário.
-    - **Corpo da Requisição**:
+    - **Description**: Delete a user.
+    - **Request Body**:
       ```json
       {
         "id_user": "integer"
@@ -106,8 +106,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
 ## Address Management
 
  **POST `/api/user/address/add`** 
-    - **Descrição**: Adicionar um endereço de usuário.
-    - **Corpo da Requisição**:
+    - **Description**: Add a user address.
+    - **Request Body**:
       ```json
       {
         "id_user": "integer",
@@ -120,8 +120,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **PATCH `/api/user/address/switch`** 
-    - **Descrição**: Trocar o endereço do usuário.
-    - **Corpo da Requisição**:
+    - **Description**: Switch user address.
+    - **Request Body**:
       ```json
       {
         "id_user": "integer",
@@ -130,8 +130,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **PUT `/api/user/address/update`** 
-    - **Descrição**: Atualizar o endereço de um usuário.
-    - **Corpo da Requisição**:
+    - **Description**: Update a user address.
+    - **Request Body**:
       ```json
       {
         "id_address": "integer",
@@ -144,8 +144,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **GET `/api/user/address/find`** 
-    - **Descrição**: Encontrar o endereço do usuário.
-    - **Corpo da Requisição**:
+    - **Description**: Find the user's address.
+    - **Request Body**:
       ```json
       {
         "id_address": "integer"
@@ -153,8 +153,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **DELETE `/api/user/address/remove`** 
-    - **Descrição**: Remover um endereço de usuário.
-    - **Corpo da Requisição**:
+    - **Description**: Remove a user address.
+    - **Request Body**:
       ```json
       {
         "id_address": "integer"
@@ -164,8 +164,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
 ## Product Management
 
  **POST `/api/product/type/register`** 
-    - **Descrição**: Registrar um novo tipo de produto.
-    - **Corpo da Requisição**:
+    - **Description**: Register a new product type.
+    - **Request Body**:
       ```json
       {
         "name": "string",
@@ -174,8 +174,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **PUT `/api/product/type/update`** 
-    - **Descrição**: Atualizar um tipo de produto.
-    - **Corpo da Requisição**:
+    - **Description**: Update a product type.
+    - **Request Body**:
       ```json
       {
         "id_type": "integer",
@@ -185,8 +185,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **POST `/api/product/register`** 
-    - **Descrição**: Registrar um novo produto.
-    - **Corpo da Requisição**:
+    - **Description**: Register a new product.
+    - **Request Body**:
       ```json
       {
         "name": "string",
@@ -199,8 +199,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **PUT `/api/product/update`** 
-    - **Descrição**: Atualizar um produto.
-    - **Corpo da Requisição**:
+    - **Description**: Update a product.
+    - **Request Body**:
       ```json
       {
         "id_product": "integer",
@@ -216,8 +216,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
 ## Card Management
 
  **POST `/api/card/register`** 
-    - **Descrição**: Registrar um novo cartão para o usuário.
-    - **Corpo da Requisição**:
+    - **Description**: Register a new card for the user.
+    - **Request Body**:
       ```json
       {
         "id_user": "integer"
@@ -225,8 +225,8 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **DELETE `/api/card/delete`** 
-    - **Descrição**: Excluir um cartão.
-    - **Corpo da Requisição**:
+    - **Description**: Delete a card.
+    - **Request Body**:
       ```json
       {
         "card_id": "integer"
@@ -234,22 +234,22 @@ Este é um API em Laravel integrado com Google Auth e Stripe (para soluções fi
       ```
 
  **GET `/api/card/user`** 
-    - **Descrição**: Listar cartões de um usuário.
-    - **Corpo da Requisição**: Não é necessário.
+    - **Description**: List a user's cards.
+    - **Request Body**: Not required.
 
 ## Product Type and Product Retrieval
 
 **GET `/api/product/type/index`** 
-    - **Descrição**: Listar todos os tipos de produto.
-    - **Corpo da Requisição**: Não é necessário.
+    - **Description**: List all product types.
+    - **Request Body**: Not required.
 
  **GET `/api/product/index`** 
-    - **Descrição**: Listar todos os produtos.
-    - **Corpo da Requisição**: Não é necessário.
+    - **Description**: List all products.
+    - **Request Body**: Not required.
 
  **GET `/api/product/find`** 
-    - **Descrição**: Encontrar um produto pelo ID.
-    - **Corpo da Requisição**:
+    - **Description**: Find a product by ID.
+    - **Request Body**:
       ```json
       {
         "id": "integer"
