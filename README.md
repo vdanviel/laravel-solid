@@ -10,7 +10,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 - The first thing you should do is add your `.env` file with the database credentials you want to use, for example:
 ![example-env](https://parzibyte.me/blog/wp-content/uploads/2019/03/Env-de-Laravel-para-MySQL.png)
 
-- Then run `php artisan migrate` to run all the necessary database structure for the project. A VERY IMPORTANT DETAIL: you need to add three variables in your .env, which are: `SECRET_KEY_JWT` your JWT secret key, `HASH_TYPE_JWT` your JWT hash type (I am using HS256 in this project), `SECRET_KEY_STRIPE` your Stripe API Key, `WEBHOOK_SECRET_STRIPE` your webhook authorization key.
+- Then run `php artisan migrate` to run all the necessary database structure for the project. A VERY IMPORTANT DETAIL: you need to add three variables in your .env, which are: `SECRET_KEY_JWT` your JWT secret key, `HASH_TYPE_JWT` your JWT hash type (I am using HS256 in this project), `SECRET_KEY_STRIPE` your Stripe API Key, `WEBHOOK_SECRET_STRIPE` your webhook authorization key from Stripe (you can claim both in yout Stripe dashboard).
 
 - After that, run `php artisan serve` and you are all set.
 
