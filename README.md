@@ -46,7 +46,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 ```
 
  **POST `/api/user/mail/change/password`** 
-- **Description**: Change password via email.
+- **Description**: Send an email to the email writed on payload with orientations to the email changing.
 - **Request Body**:
 ```json
 {
@@ -55,7 +55,7 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 ```
 
  **GET `/api/user/check/token`** 
-- **Description**: Check if a token is valid.
+- **Description**: Check if the token given on `/api/user/mail/change/password` is valid.
 - **Request Body**:
 ```json
 {
@@ -63,8 +63,8 @@ This is a Laravel API integrated with Google Auth and Stripe (for web financial 
 }
 ```
 
- **POST `/api/user/change/password`** 
-- **Description**: Change the user's password.
+ **POST `/api/user/change/password`**
+- **Description**: Change the user's password (token given on `/api/user/mail/change/password` required).
 - **Request Body**:
 ```json
 {
